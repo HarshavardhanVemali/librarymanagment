@@ -1,0 +1,189 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+.login-container {
+    border: 2px solid rgba(0, 0, 0, 0.1);
+    width: 30%;
+    text-align: center;
+    background-color: #fff;
+    border-radius: 10px;
+    height: 50%;
+}
+
+.login-container-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.1);
+    background: linear-gradient(to right, #FFFF66, #FFFFFF, #FFA500);
+    border-radius: 10px 10px 0 0;
+}
+.login-container-head img{
+    width: 80px;
+    height: 70px;
+    margin-bottom: 10px;
+}
+.form1{
+    margin-top: 80px;
+}
+.form-group {
+    margin-left: 50px;
+    margin-right: 50px;
+    align-items: center;
+    margin-bottom: 20px;
+}
+#password-field {
+    position: relative;
+}
+.fa.fa-eye {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    cursor: pointer;
+}
+.fa-eye-slash{
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    cursor: pointer;
+}
+.form-group input[type="text"],
+.form-group input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    height: 50px;
+    border: 1px solid #383737;
+    border-radius: 8px;
+    box-sizing: border-box;
+}
+.form-group input[type="text"]:hover,
+.form-group input[type="password"]:hover{
+    border : 2px solid black;
+}
+
+.toggle-password {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    cursor: pointer;
+}
+.error-message {
+    color: red;
+}
+.btn-login {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.btn-login:hover {
+    background-color: #0056b3;
+}
+@media only screen and (max-width: 375px) {
+    .login-container {
+        border: 2px solid rgba(0, 0, 0, 0.1);
+        width: 90%;
+        text-align: center;
+        background-color: #fff;
+        border-radius: 10px;
+        height: 50%;
+    }
+
+    .login-container-head img{
+        width: 40px;
+        height: 30px;
+        margin-bottom: 10px;
+    }
+    .login-container-head > h2{
+        font-size: 15px;
+    }
+
+}
+@media only screen and (min-width: 376px) and (max-width: 480px) {
+    .login-container {
+        border: 2px solid rgba(0, 0, 0, 0.1);
+        width: 90%;
+        text-align: center;
+        background-color: #fff;
+        border-radius: 10px;
+        height: 60%;
+    }
+
+    .login-container-head img{
+        width: 40px;
+        height: 30px;
+        margin-bottom: 10px;
+    }
+    .login-container-head > h2{
+        font-size: 15px;
+    }
+}
+@media only screen and (min-width: 481px) and (max-width: 768px) {
+    .login-container {
+        border: 2px solid rgba(0, 0, 0, 0.1);
+        width: 50%;
+        text-align: center;
+        background-color: #fff;
+        border-radius: 10px;
+        height: 60%;
+    }
+
+    .login-container-head img{
+        width: 40px;
+        height: 30px;
+        margin-bottom: 10px;
+    }
+    .login-container-head > h2{
+        font-size: 15px;
+    }
+}
+@media only screen and (min-width: 769px) and (max-width: 979px) {
+    .login-container {
+        border: 2px solid rgba(0, 0, 0, 0.1);
+        width: 50%;
+        text-align: center;
+        background-color: #fff;
+        border-radius: 10px;
+        height: 60%;
+    }
+
+    .login-container-head img{
+        width: 40px;
+        height: 30px;
+        margin-bottom: 10px;
+    }
+    .login-container-head > h2{
+        font-size: 18px;
+    }
+}
+@media only screen and (min-width: 980px) and (max-width: 1024px){
+    .login-container {
+        border: 2px solid rgba(0, 0, 0, 0.1);
+        width: 50%;
+        text-align: center;
+        background-color: #fff;
+        border-radius: 10px;
+        height: 60%;
+    }
+
+    .login-container-head img{
+        width: 60px;
+        height: 70px;
+        margin-bottom: 10px;
+    }
+    .login-container-head > h2{
+        font-size: 20px;
+    }
+}

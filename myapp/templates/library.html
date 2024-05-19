@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>MVGR DATA ENGINEERING</title>
+        <link rel="stylesheet" href="styles.css">
+        <script src="scripts.js"></script>
+        <link rel="icon" type="image/png" sizes="32x32" href="/static/images/department_logo.png">
+        <!-- Load static template tags -->
+        {% load static %}
+        <!-- Reference static CSS file -->
+        <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'css/attendance.css' %}">
+        <script src="{% static 'js/scripts.js' %}"></script>
+    </head>
+    <body>
+        <header>
+            <div id="college_title">
+                <div id="college_logo">
+                    <a href="https://www.mvgrce.com/" target="_blank">
+                        <img src="{% static 'images/college_logo.png' %}" alt="college_logo">
+                    </a>
+                </div>
+                <div id="college_sub_title">
+                    <h1>Maharaj Vijayaram Gajapathi Raj College of Engineering (Autonomous)</h1>
+                    <h1 id="dept_name1">Department Of Data Engineering</h1>
+                </div>
+                <div id="department_logo">
+                    <a href="{% url 'index' %}" target="_parent">
+                        <img src="{% static 'images/department_logo.png' %}" alt="college_logo">
+                    </a>
+                </div>
+            </div>
+            <div id="nav_bar">
+                <ul id="navbar">
+                    <li><a class="nav-link" href="{% url 'index' %}"><span>Home</span></a></li>
+                    <li><a class="nav-link" href="{% url 'about' %}"><span>About</span></a></li>
+                    <li><a class="nav-link" href="{% url 'faculty' %}"><span>Faculty</span></a></li>
+                    <li><a class="nav-link" href="{% url 'regulation' %}"><span>Regulation</span></a></li>
+                    <li><a class="nav-link" href="{% url 'librarylogin' %}"><span>Library</span></a></li>
+                    <li><a class="nav-link" href="{% url 'attendance' %}"><span>Attendance</span></a></li>
+                    <li><a class="nav-link" href="{% url 'contact' %}"><span>Contact</span></a></li>
+                    
+                </ul>
+            </div>
+            <div class="dropdown">
+                <button class="dropbtn">☰</button>
+                <div class="dropdown-content">
+                    <a href="{% url 'index' %}">Home</a>
+                    <a href="{% url 'about' %}">About</a>
+                    <a href="{% url 'faculty' %}">Faculty</a>
+                    <a href="{% url 'regulation' %}">Regulation</a>
+                    <a href="{% url 'attendance' %}">Attendance</a>
+                    <a href="{% url 'contact' %}">Contact</a>
+                </div>
+              </div>
+        </header>
+        <div class="library-container">
+            <div class="displaybooks">
+                <h2>Books</h2>
+                <table id="book-table">
+                    <thead>
+                        <tr>
+                            <th>Book Name</th>
+                            <th>Author</th>
+                            <th>Category</th>
+                            <th>Books Count</th>
+                            <th>Barcode</th>
+                            <th>Published By</th>
+                            <th>Condition</th>
+                            <th>Location</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for book in books %}
+                            <tr class="book-row">
+                                <td>{{ book.book_name }}</td>
+                                <td>{{ book.author }}</td>
+                                <td>{{ book.category }}</td>
+                                <td>{{ book.number_of_books }}</td>
+                                <td>{{ book.barcode }}</td>
+                                <td>{{ book.published_by }}</td>
+                                <td>{{ book.condition }}</td>
+                                <td>{{ book.location }}</td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+            <h1>Welcome, {{ user.username }}!</h1>
+            <div id="user-id-card">
+                <p><strong>Register Number:</strong> <span>{{ user.username }}</span></p>
+                <p><strong>User Name:</strong> <span>{{ user.first_name }} {{user.last_name}}</span></p>
+                <p><strong>Email:</strong> <span>{{ user.email }}</span></p>
+                <p><strong>User Type:</strong> <span>{{ user.user_type }}</span></p>
+                <p><strong>Department:</strong> <span>{{ user.department }}</span></p>
+                <p><strong>Books Taken:</strong> <span>{{ user.total_books_taken }}</span></p>
+                <p><strong>Books in Hand:</strong> <span>{{ user.current_books_in_hand }}</span></p>
+                <p><strong>Books Returned:</strong> <span>{{ user.total_books_returned }}</span></p>
+                <p><strong>Fine:</strong> <span>{{ user.fine_amount }}</span></p>
+            </div>
+            
+            <h2>Your Issued Books:</h2>
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Book Name</th>
+                        <th>Barcode</th>
+                        <th>Issued Date</th>
+                        <th>Return Date</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for book in issued_books %}
+                    <tr>
+                        <td>{{ book.book_name }}</td>
+                        <td>{{ book.barcode }}</td>
+                        <td>{{ book.issued_date }}</td>
+                        <td>{{ book.return_date }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </body>
+    <footer>
+        <h2>Follow Us On</h2>
+        <div id="footer_links">
+            <a href="https://www.linkedin.com/in/harshavardhan-vemali-334976259/">
+                <img src="https://cdn-icons-png.flaticon.com/512/2673/2673871.png" alt="linked in">
+                <p>Linked-in</p>
+            </a> 
+            <a href="https://mail.google.com/mail/u/0/?tab=rm&ogbl#inbox?compose=GTvVlcSHvbKtqXmvxCqTRCSHfKQfrVLczjWpqJkfXMcZgFbWwxldrDnqxDKwLpbgCpTzmCvVQFbrS">
+                <img src="https://cdn-icons-png.freepik.com/256/3621/3621435.png?semt=ais_hybrid" alt="Instagram">
+                <p>Instagram</p>
+            </a>
+            <a href="https://github.com/">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/5/5a/X_icon_2.svg" alt="X">
+                <p>Twitter</p>
+            </a>
+            <a href="https://github.com/">
+                <img src="https://cdn-icons-png.flaticon.com/256/1384/1384060.png" alt="Youtube">
+                <p>YouTube</p>
+            </a>
+        </div>
+        <h4>© 2024. All rights reserved to <a href="https://harshaswebpage.netlify.app/" target="_blank" rel="noopener noreferrer">V.HarshaVardhan(Dept of Data Engineering)</a>.</h4>
+    </footer>
+</html>

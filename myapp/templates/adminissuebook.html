@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>MVGR DATA ENGINEERING</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="scripts.js"></script>
+    <link rel="icon" type="image/png" sizes="32x32" href="/static/images/department_logo.png">
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/adminstyles.css' %}">
+    <script src="{% static 'js/scripts.js' %}"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div id="college_title">
+            <div id="college_logo">
+                <a href="https://www.mvgrce.com/" target="_blank">
+                    <img src="{% static 'images/college_logo.png' %}" alt="college_logo">
+                </a>
+            </div>
+            <div id="college_sub_title">
+                <h1>Maharaj Vijayaram Gajapathi Raj College of Engineering (Autonomous)</h1>
+                <h1 id="dept_name1">Department Of Data Engineering Admin Page</h1>
+            </div>
+            <div id="department_logo">
+                <a href="{% url 'index' %}">
+                    <img src="{% static 'images/department_logo.png' %}" alt="college_logo">
+                </a>
+            </div>
+        </div>
+        <div class="navbar-in-admin">
+            <ul>
+                <li><a class="nav-link" href="{% url 'adminpage' %}"><span>Home</span></a></li>
+                <li><a class="nav-link" href="{% url 'adminregulation' %}"><span>Regulation</span></a></li>
+                <li><a class="nav-link" href="{% url 'adminlibrary' %}"><span>Library</span></a></li>
+            </ul>
+        </div>
+    </header>
+    <div class="bookissuemanagment">
+        <div class="checkdetails">
+            <h2>Issue Book</h2>
+            <div>
+                <form action="{% url 'issue_book' %}" method="post" id="issue-book-form">
+                    {% csrf_token %}
+                    <label for="username">User Name : </label>
+                    <input type="text" name="username" id="username" placeholder="User Name" required>
+                    <button type="submit" id="submit-user">Next</button>
+                </form>
+            </div>
+        </div>
+        <div class="displayusers" id="user-details" style="display:none;">
+            <div id="user-id-card">
+                <p><strong>Username:</strong> <span id="user-card-username"></span></p>
+                <p><strong>User Type:</strong> <span id="user-card-user-type"></span></p>
+                <p><strong>Department:</strong> <span id="user-card-department"></span></p>
+                <p><strong>Books Taken:</strong> <span id="user-card-books-taken"></span></p>
+                <p><strong>Books in Hand:</strong> <span id="user-card-books-in-hand"></span></p>
+                <p><strong>Books Returned:</strong> <span id="user-card-books-returned"></span></p>
+                <p><strong>Fine:</strong> <span id="user-card-fine"></span></p>
+            </div>
+            <div class="displayissuedbooks" id="issued-book-details" style="display:none;">
+                <h2>Issued Books</h2>
+                <table id="issued-book-table">
+                    <thead>
+                        <tr>
+                            <th>Book Name</th>
+                            <th>Barcode</th>
+                            <th>Issued Date</th>
+                            <th>Return Date</th>
+                        </tr>
+                    </thead>
+                    <tbody id="issued-book-table-body">
+                        <!-- Issued Book data will be loaded here -->
+                    </tbody>
+                </table>
+            </div>
+            <div id="issued-book-not-found" style="display:none; color:red;">
+                No books issued to this user.
+            </div>
+            <div>
+                <input type="text" name="check_book_inlibrary" id="check_book_inlibrary" placeholder="Bar code" required>
+                <button type="button" id="check_book_inlibrary">Check Book</button>
+                <button type="submit" id="submit-issue" disabled>Issue Book</button> <span id="book-availability" style="color:red;"></span>
+                <input type="text" name="returnbook" id="returnbook" placeholder="Bar Code" required>
+                <button type="button" id="check_issued_books">Check Book</button>
+                <button type="submit" id="submit-return" disabled>Return Book</button>
+            </div>
+        </div>
+        <div id="user-not-found" style="display:none; color:red;">
+            User not found.
+        </div>
+        <div class="displaybooks" id="book-details" style="display:none;">
+            <h2>Book Details</h2>
+            <table id="book-table-details">
+                <thead>
+                    <tr>
+                        <th>Book Name</th>
+                        <th>Author</th>
+                        <th>Category</th>
+                        <th>Books Count</th>
+                        <th>Barcode</th>
+                        <th>Published By</th>
+                        <th>Condition</th>
+                        <th>Location</th>
+                    </tr>
+                </thead>
+                <tbody id="book-table-details-body">
+                </tbody>
+            </table>
+        </div>
+        <div id="book-not-found" style="display:none; color:red;">
+            Book not found.
+        </div>
+    </div>
+    <script>
+
+document.addEventListener('DOMContentLoaded', function() {
+    const issueBookForm = document.getElementById('issue-book-form');
+    const userDetails = document.getElementById('user-details');
+    const userNotFound = document.getElementById('user-not-found');
+    const bookDetails = document.getElementById('book-details');
+    const bookNotFound = document.getElementById('book-not-found');
+    const issuedBookDetails = document.getElementById('issued-book-details');
+    const issuedBookNotFound = document.getElementById('issued-book-not-found');
+    const issueBookButton = document.getElementById('submit-issue');
+    const returnBookButton = document.getElementById('submit-return');
+    const checkBookButton = document.getElementById('check_book_inlibrary');
+    const checkIssuedBooksButton = document.getElementById('check_issued_books');
+    const bookAvailabilityMessage = document.getElementById('book-availability');
+    const returnBookBarcodeInput = document.getElementById('returnbook');
+
+    let currentUsername = null;
+
+    // User Search and Display
+    issueBookForm.addEventListener('submit', (event) => {
+        event.preventDefault();
+
+        const usernameInput = document.getElementById('username');
+        const username = usernameInput.value;
+        currentUsername = username;
+
+        fetch(`/check_user/?username=${username}`)
+            .then(response => {
+                if (response.ok) {
+                    return response.json();
+                } else {
+                    userDetails.style.display = 'none';
+                    userNotFound.style.display = 'block';
+                    return Promise.reject('User not found.');
+                }
+            })
+            .then(data => {
+                // Update User ID Card Elements
+                document.getElementById('user-card-username').textContent = data.username;
+                document.getElementById('user-card-user-type').textContent = data.user_type;
+                document.getElementById('user-card-department').textContent = data.department;
+                document.getElementById('user-card-books-taken').textContent = data.total_books_taken;
+                document.getElementById('user-card-books-in-hand').textContent = data.current_books_in_hand;
+                document.getElementById('user-card-books-returned').textContent = data.total_books_returned;
+                document.getElementById('user-card-fine').textContent = data.fine_amount;
+
+                userDetails.style.display = 'block';
+                userNotFound.style.display = 'none';
+
+                // Fetch and display issued books for the user
+                refreshIssuedBookTable(username);
+            })
+            .catch(error => {
+                userDetails.style.display = 'none';
+                userNotFound.style.display = 'block';
+                alert('Error fetching user details.');
+                console.error('Error:', error);
+            });
+    });
+
+    // Book Check (for both Issue and Return)
+    checkBookButton.addEventListener('click', (event) => {
+        event.preventDefault();
+        const barcodeInput = document.getElementById('check_book_inlibrary');
+        const barcode = barcodeInput.value;
+
+        fetch(`/check_book/?barcode=${barcode}`)
+            .then(response => {
+                if (response.ok) {
+                    return response.json();
+                } else {
+                    bookDetails.style.display = 'none';
+                    bookNotFound.style.display = 'block';
+                    return Promise.reject('Book not found.');
+                }
+            })
+            .then(data => {
+                const bookTableBody = document.getElementById('book-table-details-body');
+                bookTableBody.innerHTML = '';
+
+                const row = bookTableBody.insertRow();
+                row.innerHTML = `
+                    <td>${data.book_name}</td>
+                    <td>${data.author}</td>
+                    <td>${data.category}</td>
+                    <td>${data.number_of_books}</td>
+                    <td>${data.barcode}</td>
+                    <td>${data.published_by}</td>
+                    <td>${data.condition}</td>
+                    <td>${data.location}</td>
+                `;
+
+                bookDetails.style.display = 'block';
+                bookNotFound.style.display = 'none';
+
+                // Update Issue Book Button state
+                if (data.number_of_books > 0) {
+                    issueBookButton.disabled = false;
+                    bookAvailabilityMessage.textContent = "Book Available";
+                    bookAvailabilityMessage.style.color = "green";
+                } else {
+                    issueBookButton.disabled = true;
+                    bookAvailabilityMessage.textContent = "Book Not Available";
+                    bookAvailabilityMessage.style.color = "red";
+                }
+            })
+            .catch(error => {
+                bookDetails.style.display = 'none';
+                bookNotFound.style.display = 'block';
+                alert('Error fetching book details.');
+                console.error('Error:', error);
+            });
+    });
+
+    // Book Issue
+    issueBookButton.addEventListener('click', (event) => {
+        event.preventDefault();
+        const barcode = document.getElementById('check_book_inlibrary').value;
+
+        fetch(`/issue_book/`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/x-www-form-urlencoded',
+                'X-CSRFToken': getCookie('csrftoken') // Add CSRF token
+            },
+            body: `barcode=${barcode}&username=${currentUsername}`
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.success) {
+                alert(data.message);
+                // Refresh the book details
+                checkBook(barcode);
+                // Refresh the user details
+                refreshUserTable(currentUsername);
+                // Refresh issued book table
+                refreshIssuedBookTable(currentUsername);
+            } else {
+                alert(data.error);
+            }
+        })
+        .catch(error => {
+            alert('Error issuing book');
+            console.error('Error:', error);
+        });
+    });
+
+    checkIssuedBooksButton.addEventListener('click', (event) => {
+    event.preventDefault();
+    const barcodeInput = document.getElementById('returnbook'); // Use 'returnbook' input
+    const barcode = barcodeInput.value;
+
+    fetch(`/check_issued_return_books/?barcode=${barcode}&username=${currentUsername}`) // Check if book is issued
+        .then(response => {
+            if (response.ok) {
+                return response.json();
+            } else {
+                bookDetails.style.display = 'none';
+                bookNotFound.style.display = 'block';
+                return Promise.reject('Book not found.');
+            }
+        })
+        .then(data => {
+            if (data.issued) {
+                bookAvailabilityMessage.textContent = "Book is Issued to this User";
+                bookAvailabilityMessage.style.color = "green";
+                returnBookButton.disabled = false; // Enable return button
+            } else {
+                bookAvailabilityMessage.textContent = "Book is not Issued to this User";
+                bookAvailabilityMessage.style.color = "red";
+                returnBookButton.disabled = true; // Disable return button
+            }
+        })
+        .catch(error => {
+            bookDetails.style.display = 'none';
+            bookNotFound.style.display = 'block';
+            alert('Error checking book availability.');
+            console.error('Error:', error);
+        });
+});
+
+
+    // Return Book
+    returnBookButton.addEventListener('click', (event) => {
+    event.preventDefault();
+    const barcode = returnBookBarcodeInput.value;
+
+    fetch(`/return_book/`, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/x-www-form-urlencoded',
+            'X-CSRFToken': getCookie('csrftoken') // Add CSRF token
+        },
+        body: `barcode=${barcode}&username=${currentUsername}` // Send username too
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.success) {
+            alert(data.message);
+            // Refresh the user details
+            refreshUserTable(currentUsername);
+            // Clear the input field
+            returnBookBarcodeInput.value = '';
+            // Refresh issued book table
+            refreshIssuedBookTable(currentUsername);
+        } else {
+            alert(data.error);
+        }
+    })
+    .catch(error => {
+        alert('Error returning book');
+        console.error('Error:', error);
+    });
+});
+
+
+    // Function to refresh user table
+    function refreshUserTable(username) {
+        fetch(`/check_user/?username=${username}`)
+            .then(response => {
+                if (response.ok) {
+                    return response.json();
+                } else {
+                    return Promise.reject('User not found.');
+                }
+            })
+            .then(data => {
+                // Update User ID Card Elements
+                document.getElementById('user-card-username').textContent = data.username;
+                document.getElementById('user-card-user-type').textContent = data.user_type;
+                document.getElementById('user-card-department').textContent = data.department;
+                document.getElementById('user-card-books-taken').textContent = data.total_books_taken;
+                document.getElementById('user-card-books-in-hand').textContent = data.current_books_in_hand;
+                document.getElementById('user-card-books-returned').textContent = data.total_books_returned;
+                document.getElementById('user-card-fine').textContent = data.fine_amount;
+            })
+            .catch(error => {
+                alert('Error updating user details.');
+                console.error('Error:', error);
+            });
+    }
+
+    function refreshIssuedBookTable(username) {
+        fetch(`/check_issued_books/?username=${username}`)
+            .then(response => {
+                if (response.ok) {
+                    return response.json();
+                } else {
+                    issuedBookDetails.style.display = 'none';
+                    issuedBookNotFound.style.display = 'block';
+                    return Promise.reject('No books issued to this user.');
+                }
+            })
+            .then(data => {
+                const issuedBookTableBody = document.getElementById('issued-book-table-body');
+                issuedBookTableBody.innerHTML = '';
+
+                if (data.issued_books.length > 0) {
+                    data.issued_books.forEach(issued_book => {
+                        const row = issuedBookTableBody.insertRow();
+                        row.innerHTML = `
+                            <td>${issued_book.book_name}</td>
+                            <td>${issued_book.barcode}</td>
+                            <td>${issued_book.issued_date}</td>
+                            <td>${issued_book.return_date || '-'}</td>
+                        `;
+                    });
+                    issuedBookDetails.style.display = 'block';
+                    issuedBookNotFound.style.display = 'none';
+                } else {
+                    issuedBookDetails.style.display = 'none';
+                    issuedBookNotFound.style.display = 'block';
+                }
+            })
+            .catch(error => {
+                issuedBookDetails.style.display = 'none';
+                issuedBookNotFound.style.display = 'block';
+                alert('Error fetching issued book details.');
+                console.error('Error:', error);
+            });
+    }
+
+    // Helper function to get CSRF token
+    function getCookie(name) {
+        let cookieValue = null;
+        if (document.cookie && document.cookie !== '') {
+            const cookies = document.cookie.split(';');
+            for (let i = 0; i < cookies.length; i++) {
+                const cookie = cookies[i].trim();
+                if (cookie.substring(0, name.length + 1) === (name + '=')) {
+                    cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                    break;
+                }
+            }
+        }
+        return cookieValue;
+    }
+});
+    </script>
+</body>
+</html>

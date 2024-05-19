@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>MVGR DATA ENGINEERING</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="scripts.js"></script>
+    <link rel="icon" type="image/png" sizes="32x32" href="/static/images/department_logo.png">
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/adminstyles.css' %}">
+    <script src="{% static 'js/scripts.js' %}"></script>
+    <script src="{% static 'js/adminscripts.js' %}"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body>
+<header>
+    <div id="college_title">
+        <div id="college_logo">
+            <a href="https://www.mvgrce.com/" target="_blank">
+                <img src="{% static 'images/college_logo.png' %}" alt="college_logo">
+            </a>
+        </div>
+        <div id="college_sub_title">
+            <h1>Maharaj Vijayaram Gajapathi Raj College of Engineering (Autonomous)</h1>
+            <h1 id="dept_name1">Department Of Data Engineering Admin Page</h1>
+        </div>
+        <div id="department_logo">
+            <a href="{% url 'index' %}">
+                <img src="{% static 'images/department_logo.png' %}" alt="college_logo">
+            </a>
+        </div>
+    </div>
+    <div class="navbar-in-admin">
+        <ul>
+            <li><a class="nav-link" href="{% url 'adminpage' %}"><span>Home</span></a></li>
+            <li><a class="nav-link" href="{% url 'adminregulation' %}"><span>Regulation</span></a></li>
+            <li><a class="nav-link" href="{% url 'adminlibrary' %}"><span>Library</span></a></li>
+        </ul>
+    </div>
+</header>
+<div class="usermanagment">
+    <div class="adduser">
+        <h2>Add Users</h2>
+        <div>
+            {% if messages %}
+            <ul class="messages">
+                {% for message in messages %}
+                <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+                {% endfor %}
+            </ul>
+            {% endif %}
+            <form action="{% url 'add_users' %}" method="post" id="add-user-form">
+                {% csrf_token %}
+                <label for="usertype">Select User Type:</label>
+                <select id="usertype" name="usertype">
+                    <option value="faculty">Faculty</option>
+                    <option value="student">Student</option>
+                </select>
+                <label for="sequencenumber">Sequence Number:</label>
+                <input type="text" name="sequencenumber" placeholder="e.g., 22331A47" required>
+                <label for="min">Starting Number:</label>
+                <input type="number" name="min" id="min" min="1" value="1" required>
+                <label for="max">Ending Number:</label>
+                <input type="number" name="max" id="max" value="" required>
+                <label for="department">Department:</label>
+                <select id="department" name="department">
+                    <option value="CIC">CIC</option>
+                    <option value="CSM">CSM</option>
+                    <option value="CSD">CSD</option>
+                </select>
+                <button type="submit" id="submit">Add users</button>
+            </form>
+        </div>
+    </div>
+    <div class="searchbar">
+        <input type="text" id="search-input" placeholder="Search User by username...">
+    </div>
+    <div class="displayusers">
+        <h2>Users</h2>
+        <table id="user-table">
+            <thead>
+                <tr>
+                    <th>Username</th>
+                    <th>Email Address</th>
+                    <th>Name</th>
+                    <th>User Type</th>
+                    <th>Books Taken</th>
+                    <th>Books in Hand</th>
+                    <th>Books Returned</th>
+                    <th>Department</th>
+                    <th>Fine</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for user in users %}
+                <tr class="user-row">
+                    <td>{{ user.username }}</td>
+                    <td>{{user.email}}</td>
+                    <td>{{user.first_name}} {{user.last_name}}</td>
+                    <td>{{ user.user_type }}</td>
+                    <td>{{ user.total_books_taken }}</td>
+                    <td>{{ user.current_books_in_hand }}</td>
+                    <td>{{ user.total_books_returned }}</td>
+                    <td>{{ user.department }}</td>
+                    <td>{{ user.fine_amount }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+</body>
+</html>

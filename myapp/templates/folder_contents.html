@@ -1,0 +1,15 @@
+{% if folder %}
+    <h2>Folder: {{ folder }}</h2>
+{% endif %}
+
+<ul>
+    {% for subfolder in subfolders %}
+    <li><a href="#" class="folder-link" data-folder-id="{{ subfolder.id }}">{{ subfolder.name }}</a></li>
+    {% endfor %}
+</ul>
+
+<ul>
+    {% for file in files %}
+    <li>{{ file.name }}</li>
+    {% endfor %}
+</ul>

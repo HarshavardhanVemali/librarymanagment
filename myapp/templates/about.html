@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>MVGR DATA ENGINEERING</title>
+        <link rel="stylesheet" href="styles.css">
+        <script src="scripts.js"></script>
+        <link rel="icon" type="image/png" sizes="32x32" href="/static/images/department_logo.png">
+        <!-- Load static template tags -->
+        {% load static %}
+        <!-- Reference static CSS file -->
+        <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
+        <!-- Reference static JavaScript file -->
+        <script src="{% static 'js/scripts.js' %}"></script>
+    </head>
+    </style>
+    <body>
+        <header>
+            <div id="college_title">
+                <div id="college_logo">
+                    <a href="https://www.mvgrce.com/" target="_blank">
+                        <img src="{% static 'images/college_logo.png' %}" alt="college_logo">
+                    </a>
+                </div>
+                <div id="college_sub_title">
+                    <h1>Maharaj Vijayaram Gajapathi Raj College of Engineering (Autonomous)</h1>
+                    <h1 id="dept_name1">Department Of Data Engineering</h1>
+                </div>
+                <div id="department_logo">
+                    <a href="{% url 'index' %}" target="_parent">
+                        <img src="{% static 'images/department_logo.png' %}" alt="college_logo">
+                    </a>
+                </div>
+            </div>
+            <div id="nav_bar">
+                <ul id="navbar">
+                    <li><a class="nav-link" href="{% url 'index' %}"><span>Home</span></a></li>
+                    <li><a class="nav-link" href="{% url 'about' %}"><span>About</span></a></li>
+                    <li><a class="nav-link" href="{% url 'faculty' %}"><span>Faculty</span></a></li>
+                    <li><a class="nav-link" href="{% url 'regulation' %}"><span>Regulation</span></a></li>
+                    <li><a class="nav-link" href="{% url 'librarylogin' %}"><span>Library</span></a></li>
+                    <li><a class="nav-link" href="{% url 'attendance' %}"><span>Attendance</span></a></li>
+                    <li><a class="nav-link" href="{% url 'contact' %}"><span>Contact</span></a></li>
+                </ul>
+            </div>
+            <div class="dropdown">
+                <button class="dropbtn">&#9776;</button>
+                <div class="dropdown-content">
+                    <a href="{% url 'index' %}">Home</a>
+                    <a href="{% url 'about' %}">About</a>
+                    <a href="{% url 'faculty' %}">Faculty</a>
+                    <a href="{% url 'regulation' %}">Regulation</a>
+                    <a href="{% url 'attendance' %}">Attendance</a>
+                    <a href="{% url 'contact' %}">Contact</a>
+                </div>
+              </div>
+        </header>
+        <div id="imageslider_at_about">
+                <div class="slider-container">
+                    <div class="slider-wrapper">
+                        <div class="slide">
+                            <img src=" data:image/jpeg;base64,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" alt="Slide 1">
+                        </div>
+                        <div class="slide">
+                            <img src="data:image/jpeg;base64,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" alt="Slide 2">
+                        </div>
+                        <div class="slide">
+                            <img src="data:image/jpeg;base64,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" alt="Slide 3">
+                        </div>
+                    </div>
+                    <button class="prev-btn" onclick="prevSlide()">&#10094;</button>
+                    <button class="next-btn" onclick="nextSlide()">&#10095;</button>
+                </div>
+                <div class="slider-dots">
+                    <span class="dot" onclick="currentSlide(1)"></span>
+                    <span class="dot" onclick="currentSlide(2)"></span>
+                    <span class="dot" onclick="currentSlide(3)"></span>
+                </div>
+        </div>
+        <div id="msgandcourse">
+            <div id="message_from_department">
+                <div class="department-section">
+                    <h2 id="message_title">Message from the Head of the Department</h2>
+                    <div class="accordion">
+                        <h2 onclick="toggleAccordion('message')">Who should choose Data Engineering?</h2>
+                        <div id="message" class="content">
+                            <img src="https://www.mvgrce.com/images/2023/06/22/dataengghod.png" alt="hod_img">
+                            <div id="msg">
+                                <p>We take great pride in introducing the recently established Data Engineering Department within the School of Computer Science. This department is dedicated to three distinct sections, which have been designed and categorized based on emerging technologies in the field of Computer Science.</p>
+                                <p>These undergraduate engineering courses have been started by the institute from the academic year 2022-23 with the intake capacity of 60 seats per section.</p>
+                                <p>The sections include: <br>1. Artificial Intelligence and Machine Learning<br>2. Data Science<br>3. Internet of Things and Cybersecurity, including Blockchain Technology</p>
+                                <p>Our programs under the Department of Data Engineering aim to excel as an educational center for technical education. Our goal is to transform aspiring students into skilled and well-rounded software professionals. We emphasize a strong understanding of fundamentals, a flair for responsible innovation in engineering practical and robust solutions, and instill confidence to meet the challenges in their chosen professional domains.</p>
+                                <p>Those who enjoy problem-solving, have strong analytical skills, and possess a desire to contribute to the technological advancements of various domains would find Data Engineering an ideal choice.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="accordion">
+                        <h2 onclick="toggleAccordion('opportunities')">What are the opportunities in Data engineering?</h2>
+                        <div id="opportunities" class="content">
+                            <div id="msg"><p>These emerging technologies have become integral to the engineering field, bringing forth significant advancements and opportunities across various domains such as healthcare, robotics, prediction, decision-making, cybersecurity, and automation. It is essential to consider data quality, model accuracy, interpretability, and ethical aspects in these domains.</p></div>
+                        </div>
+                    </div>
+                    
+                    <div class="accordion">
+                        <h2 onclick="toggleAccordion('industry')">How is the current industry scenario and how MVGR designed its courses to tackle these industry challenges?</h2>
+                        <div id="industry" class="content">
+                            <div id="msg">
+                                <p>These programs offer a comprehensive curriculum that meets current industry requirements in relevant fields. Project-based learning is an integral part of our curriculum, providing students with hands-on experience. We also provide students with awareness of various career-oriented certifications and guidance to pursue them. To expose students to new challenges and cutting-edge technology, we invite industry experts for guest lectures, real data analysis projects, seminar presentations, and potential internships.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="accordion">
+                        <h2 onclick="toggleAccordion('aspects')">Other unique aspects of DE at MVGR</h2>
+                        <div id="aspects" class="content">
+                            <div id="msg">
+                                <p>Students graduating with a degree in Computer Science - Data Engineering will not only be well-equipped to build successful careers in the industry and contribute to the entrepreneurial landscape of India but also have the option to pursue higher studies in their field of interest.</p>
+                                <p>Overall, these programs offer a curriculum that fosters the overall development of students, equipping them with relevant technologies and the ability to apply them responsibly while aligning with regulatory standards to ensure safety, reliability, and societal well-being.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div id="course_offered">
+                <h2>Courses Offered</h2>
+                <table id="course-table">
+                    <tr>
+                        <th>Course Offered</th>
+                        <th>Specialization</th>
+                    </tr>
+                    <tr>
+                        <td>B.Tech</td>
+                        <td>Iot & Cybersecurity with BlockChain Technology</td>
+                    </tr>
+                    <tr>
+                        <td>B.Tech</td>
+                        <td>Artificial Intelligence and Machine Learning</td>
+                    </tr>
+                    <tr>
+                        <td>B.Tech</td>
+                        <td>Data Science</td>
+                    </tr>
+                </table>
+            </div>
+            <div class="clearfix"></div>
+        </div>   
+        <div id="nav-bar-in-about">
+            <table>
+                <tr>
+                    <th onclick="loadContent('vision_mission')" id="vision_mission_btn" class="active">Vision and Mission</th>
+                    <th onclick="loadContent('curriculum')" id="curriculum_btn">Curiculum</th>
+                    <th onclick="loadContent('addon_courses')" id="addon_courses_btn">Addon Courses</th>
+                    <th onclick="loadContent('achievements')" id="achievements_btn">Achievements</th>
+                </tr>
+            </table>
+        </div>
+        
+        <div id="content">
+            <div id="vision_mission" class="content-section" style="display: block;">
+                <h2>Vision and Mission</h2>
+                <p>Department of Data Engineering strives to become a center par excellence for technical education where aspiring students can be transformed into skilled and well-rounded software professionals with strong understanding of fundamentals, a flair for responsible innovation in engineering practical and robust solutions applying the fundamentals, and confidence to meet the challenges in their chosen professional spheres.
+                <h2>Mission</h2>
+                <p>Aspire to reach higher quality benchmarks in training students on all skills expected of a computer professional through:</p>
+                <ul>
+                    <li>A meticulously planned yet flexible learning process administered:
+                        <br><br><ol>
+                            <li>By accomplished teachers who are encouraged to keep in touch with latest developments in their respective areas of interest</li>
+                            <li>With state-of-the-art infrastructure providing a stimulating learning environment.</li>
+                            <li>Thorough and compassionate student-centric delivery</li>
+                        </ol>
+                    </li><br><br>
+                    <li>Continuous assessment of the effectiveness of learning processes through stake holders feedback.</li>
+                    <li>Continuous fine-tuning aimed at improvement.</li>
+                </ul>
+                </p>
+            </div>
+        
+            <div id="curriculum" class="content-section" style="display: none;">
+                <h2>Curiculum</h2>
+                <p>The Choice Based Credit System allows students to move to Institutions across the world with flexibility to transfer their credits.The proposed CBCS allows the students to choose from core electives, free electives and audit courses. 29 elective choices are provided out of which a student has to choose any 8 elective courses that he/she would pursue in various semesters starting from 1 elective in 5th Semester, 1 elective in 6th Semester, 5 electives in 7th Semester and 1 elective (a self-study course with optional attendance requirement) in 8th Semester.</p>
+                <p>The electives are divided into 3 thrust areas, Business Intelligence, Networks, Enterprise Architecture and 1 Generic group, with each of the thrust areas having 7 electives and generic group having 8 options. Any student should choose 1 of the 3 thrust areas in which he/she will do 4 electives thereby indicating that thrust area as his/her major choice. The thrust area has Level 2 courses four of which are advanced, are designed to cater to Industry standards and are dependent on two Level 1 courses. One Level two course has no dependency.Any student should also mandatorily choose 2 electives from the generic group. He can go to a maximum of 3.</p>
+                <p>He picks 1 of these 2 groups as his/her minor group and picks 1 Level 3 or 1 level 3 and 1 level 4 from that group. This way, the course structure has been designed to allow complete flexibility to students while at the same time, preserving dependencies between the core (prerequisite) courses and the advanced(Research/Industry oriented) courses.</p>
+            </div>
+        
+            <!-- Content for Addon Courses -->
+            <div id="addon_courses" class="content-section" style="display: none;">
+                <h2>Addon Courses</h2>
+                <p>The need for add-on courses is to improve the skills and increase the employability of students. At MVGR, in house training is provided by Industry and Academia experts. Training on specific tools is conducted typically biannually in the college. Certifications are offered to students on Industry related courses at a subsidized cost, apart from encouraging them to take atleast a MOOCs course for self study by the completion of their graduation. Also, through the IUCEE consortium, experts from abroad conduct online training through webinars in addition to periodically visiting the institution and conducting workshops on emerging fields in Computer Science and Engineering. Some of the add-on courses offered by the Institution are:</p>
+                <ul>
+                    <li style="font-weight: bold;">Cisco Networking Academy</li>
+                    <ul>
+                        <li>CCNA</li>
+                        <li>Cyber Ops</li>
+                        <li>IoT Connecting Things</li>
+                        <li>C, C++ , Basic and Advanced Programming</li>
+                        <li>Python Prograaming</li>
+                        <li>IoT Security</li>
+                        <li>IoT Data Analytics</li>
+                        <li>IT Essentials</li>
+                        <li>Linux Essentials</li>
+                    </ul>
+                    <li style="font-weight: bold;">EC Council Academy:</li>
+                    <ul>
+                        <li>CEH v11</li>
+                    </ul>
+                    <li style="font-weight: bold;">Blue Prism RPA Academy</li>
+                    <ul>
+                        <li>RPA Foundation Course</li>
+                        <li>RPA Assocaite Developer</li>
+                    </ul>
+                    <li style="font-weight: bold;">AWS Academy</li>
+                    <ul>
+                        <li>AWS Cloud Fundamentals</li>
+                        <li>AWS Solution Architect</li>
+                    </ul>
+                    <li style="font-weight: bold;">Palo Alto Acamedy</li>
+                    <ul>
+                        <li>Palo Alto Certified Cyber Security</li>
+                        <li>Entry level Technician</li>
+                    </ul>
+                    <li style="font-weight: bold;">Redhat Linux Academy</li>
+                    <ul>
+                        <li>Redhat System Administration</li>
+                    </ul>
+                </ul>
+                <p>Five of our faculty members Dr. P. Ravi Kiran Varma,, Mr. K.V.Subba Raju,  Dr. C. Kalyan Chakravarthy,  Dr. G.Suvarna Kumar and Mr,R.Ravikanth are certified trainers to offer the above courses to students and faculty.</p>
+            </div>
+        
+            <!-- Content for Achievements -->
+            <div id="achievements" class="content-section" style="display: none;">
+                <h2>Achievements</h2>
+                <ol>
+                    <li>Dr. Ravi Kiran Varma P, Associate Professor, organized IoT Boot Camp for 40 students of different engineering colleges.</li>
+                    <li>Mr.K.V.SubbaRaju, Assistant Professor, organized workshop on Cyber Security Essentials</li>
+                    <li>Dr. P. Sateesh, Associate Professor has got Outstanding Scientist award from Venus International Foundation</li>
+                    <li>Students Mr. SVSRK Praveen, KVS Sai Manoj and P.Siva Gowtham have secured All India 20th Rank and World Wide 344 Rank in the IEEE Xtreme 2017, a 24 hour international coding competition held on 14th October 2017.</li>
+                    <li>Dr. Ravi Kiran Varma P, Associate Professor, CSE, received "CISCO Networking Academy Instructor Excellence Award 2017" in March 2018.</li>
+                    <li>Dr. Ravi Kiran Varma P, was awarded Senior Member of IEEE and ACM in May 2018.</li>
+                    <li>Dr. Ravi Kiran Varma P, stood as Topper (Top 1%) in the NPTEL 12 weeks course, "Introduction to Internet of Things", offered by IIT Kharagpur in May 2018.</li>
+                    <li>Dr. Ravi Kiran Varma P, has delivered invited talk as one of the resource person for "two-week workshop on Data Analytics for Cyber Security in the Centre for Cyber Security and Data Analytics, AUCE(A), Visakhapatnam which is sponsored by ISEA Project phase-II of Ministry of Electronics and IT, Govt. of India.</li>
+                    <li>Mr. K.V Subba Raju, successfully completed “CISCO CYBEROPS” course and he is one of the first 300 instructors worldwide and first 10 in India.</li>
+                    <li>Mr. K.V Subba Raju, got “Expert Level Instructor Award” in recognition of EXPERT LEVEL INSTRUCTOR EXCELLENCE and lasting contributions to the CISCO NETWORKING ACADEMY PROGRAM in 2017.</li>
+                    <li>Dr. G. Suvarna Kumar achieved best thesis award from CSI, India.</li>
+                    <li>Dr. G. Suvarna Kumar & Dr.G. Sandhya Devi together published book titled “Towards quality improvement in learning environment” by LAP Lambert academic publications, London. ISBN: 13-978-613-9-81602-6.</li>
+                </ol>
+            </div>
+        </div>                     
+    </body>
+    <footer>
+        <h2>Follow Us On</h2>
+        <div id="footer_links">
+            <a href="https://www.linkedin.com/in/harshavardhan-vemali-334976259/">
+                <img src="https://cdn-icons-png.flaticon.com/512/2673/2673871.png" alt="linked in">
+                <span>Linked-in</span>
+            </a> 
+            <a href="https://mail.google.com/mail/u/0/?tab=rm&ogbl#inbox?compose=GTvVlcSHvbKtqXmvxCqTRCSHfKQfrVLczjWpqJkfXMcZgFbWwxldrDnqxDKwLpbgCpTzmCvVQFbrS">
+                <img src="https://cdn-icons-png.freepik.com/256/3621/3621435.png?semt=ais_hybrid" alt="Instagram">
+                <span>Instagram</span>
+            </a>
+            <a href="https://github.com/">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/5/5a/X_icon_2.svg" alt="X">
+                <span>Twitter</span>
+            </a>
+            <a href="https://github.com/">
+                <img src="https://cdn-icons-png.flaticon.com/256/1384/1384060.png" alt="Youtube">
+                <span>YouTube</span>
+            </a>
+        </div>
+        <h4>&copy; 2024. All rights reserved to <a href="https://harshaswebpage.netlify.app/" target="_blank" rel="noopener noreferrer">V.HarshaVardhan(Dept of Data Engineering)</a>.</h4>
+    </footer>
+    <script>
+let slideIndex = 1;
+showSlides(slideIndex);
+
+// Next/previous controls
+function nextSlide() {
+    showSlides(slideIndex += 1);
+}
+
+function prevSlide() {
+    showSlides(slideIndex -= 1);
+}
+
+// Thumbnail image controls
+function currentSlide(n) {
+    showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+    let i;
+    const slides = document.getElementsByClassName("slide");
+    const dots = document.getElementsByClassName("dot");
+    
+    if (n > slides.length) {slideIndex = 1}
+    if (n < 1) {slideIndex = slides.length}
+    
+    for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+    }
+    
+    for (i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", "");
+    }
+    
+    slides[slideIndex-1].style.display = "block";
+    dots[slideIndex-1].className += " active";
+}
+
+// Auto scroll
+let autoSlideIndex = 0;
+function autoSlide() {
+    const slides = document.getElementsByClassName("slide");
+    const dots = document.getElementsByClassName("dot");
+    for (let i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+    }
+    for (let i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", "");
+    }
+    
+    autoSlideIndex++;
+    if (autoSlideIndex > slides.length) {autoSlideIndex = 1}
+    for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+    }
+    slides[autoSlideIndex-1].style.display = "block";
+    dots[autoSlideIndex-1].className += " active";
+    
+    setTimeout(autoSlide, 3000);
+}
+autoSlide();
+let startX;
+let endX;
+const sliderWrapper = document.querySelector('.slider-wrapper');
+
+sliderWrapper.addEventListener('pointerdown', (e) => {
+    startX = e.clientX || e.touches[0].clientX;
+});
+
+sliderWrapper.addEventListener('pointerup', (e) => {
+    endX = e.clientX || e.changedTouches[0].clientX;
+    handleGesture();
+});
+
+function handleGesture() {
+    if (startX - endX > 50) {
+        // Swipe left
+        nextSlide();
+    } else if (endX - startX > 50) {
+        // Swipe right
+        prevSlide();
+    }
+}
+//about.html ending
+    </script>
+</html>

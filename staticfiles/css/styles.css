@@ -1,0 +1,774 @@
+body, html {
+    height: 100%;
+    margin: 0;
+    overflow-x: hidden; 
+}
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+body {
+    font-family: sans-serif;
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+    margin: 0;
+    padding: 0;
+    transition: background-color 0.3s ease;
+    overflow-x: hidden;
+}
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    color: black;
+    z-index: 1000;
+}
+/*index.html css start*/
+#college_title {
+    background: linear-gradient(45deg, #F5F5F5, #FFD700, #FFA07A);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 120px;
+}
+
+#dept_name {
+    padding-top: 15px;
+}
+#dept_name1{
+    padding-top: 15px;
+}
+#college_logo img {
+    float: left;
+    height: 120px;
+}
+
+#department_logo img {
+    float: right;
+    height: 120px;
+}
+
+#college_sub_title {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#college_sub_title h1, h3 {
+    margin: 0;
+}
+
+#welcome_scroll {
+    margin-top: 177px;
+    background-color: #e6ebeb;
+}
+
+#nav_bar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: black; 
+    height: 55px;
+}
+
+#nav_bar ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex; 
+}
+
+#nav_bar li {
+    margin: 0 10px;
+    align-items: center;
+}
+
+#nav_bar li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 10px 25px; 
+    text-decoration: none;
+    transition: transform 0.3s ease;
+    font-size: 1.2em;
+}
+
+#nav_bar li {
+    float: none;
+}
+
+#nav_bar li a:not(.active) {
+    color: white;
+}
+
+#nav_bar li a:hover {
+    color: #FFD700;
+    background-color: black;
+    border-radius: 10px;
+    box-shadow: 0 0 5px #FFA07A, 0 0 10px #FFA07A;
+}
+
+#navbar li a.nav-link.active {
+    color: #ffc947;
+    background-color: black;
+    border-radius: 10px;
+    box-shadow: 0 0 5px #ffc947, 0 0 10px #ffc947;
+}
+
+/*image slier in index.html*/
+#imageslider{
+    margin-top:30px;
+}
+.slider-container {
+    width: 100%;
+    margin: 0 auto;
+    position: relative;
+    height: 650px;
+}
+.slider-wrapper {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+.slide {
+    flex: 0 0 100%;
+    height: 650px;
+}
+.slide img {
+    width: 100%;
+    height: 650px;
+}
+.slider-dots {
+    text-align: center;
+    margin-top: 10px;
+}
+.dot {
+    display: inline-block;
+    margin: 0 5px;
+    width: 45px;
+    height: 3px;
+    border-radius: 30px;
+    background-color: #bbb;
+    cursor: pointer;
+}
+.dot.active {
+    background-color: #333;
+}
+.prev-btn, .next-btn {
+background-color: none;
+cursor: pointer;
+position: absolute;
+top: 50%;
+width: auto;
+padding: 16px;
+margin-top: -22px;
+color: black;
+font-weight: bold;
+font-size: 18px;
+transition: 0.6s ease;
+border: none;
+border-radius: 3px;
+user-select: none;
+}
+/* Position the "next button" to the right */
+.next-btn {
+right: 0;
+border-radius: 3px;
+}
+/*On hover, add a grey background color */
+.prev-btn:hover, .next-btn:hover {
+background-color:black;
+color: white;
+}
+
+/*Events in index.html*/
+.events {
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-bottom: 30px;
+    padding-top: 100px;
+    display: flex;
+    justify-content: space-between;
+}
+.event-column {
+    width: 45%;
+    height: 400px;
+    overflow-y: auto;
+    border: 1px solid #ccc;
+}
+  table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+ th {
+    background-color: black;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    border: 2px solid black;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+}
+
+td {
+    padding: 10px;
+    color: black;
+    padding-bottom: 20px;
+    padding-top: 20px;
+    border: 1px solid black;
+    border-right: 2px solid black;
+    border-left: none;
+}
+
+td.date {
+    background-color: #a60202;
+    color: white;
+    border-right: none;
+    width: 50px;
+    border-left: 2px solid #a60202;
+}
+.event-column {
+    overflow: hidden;
+}
+
+
+#faculty_at_home_page {
+    font-weight: 300;
+    padding-top: 20px;
+    padding-left: 20px;
+    white-space: nowrap;
+    
+}
+
+#faculty_at_home_page h2 {
+    position: relative;
+    display: inline-block;
+    font-size: 30px;
+}
+
+#faculty_at_home_page h2::after {
+    content: "";
+    position: absolute;
+    left: 40px;
+    bottom: -2px;
+    width: 100%;
+    border-bottom: 1px solid black;
+}
+
+#faculty_at_home_page h2::before {
+    content: "";
+    position: absolute;
+    left: 3px;
+    bottom: -4px;
+    width: 50%;
+    border-bottom: 5px solid black;
+}
+
+#faculty_at_home_page_member {
+    text-align: center;
+    display: inline-block;
+    margin-top: 30px;
+    margin-right: 40px; /* Space between the members */
+    vertical-align: top; /* Align the divs at the top */
+}
+
+#faculty_at_home_page_member a.faculty_link {
+    display: block;
+    margin-bottom: 10px; /* Space between the image and the text */
+}
+
+#faculty_at_home_page_member img {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: block;
+    border-radius: 50%;
+    width: 200px;
+    height: 200px;
+    margin-bottom: 10px;
+}
+
+#faculty_at_home_page_member span {
+    display: block;
+}
+/*index.html css end*/
+
+
+/*faculty*/
+#home {
+    font-family: 'Roboto', sans-serif;
+}
+
+#our_team{
+    margin-top: 200px;
+    position: relative;
+    display: inline-block;
+    font-size: 30px;
+    padding-left: 20px;
+}
+
+#our_team::after {
+    content: "";
+    position: absolute;
+    left: 40px;
+    bottom: -2px;
+    width: 100%;
+    border-bottom: 1px solid black;
+    padding-left: 20px;
+}
+
+#our_team::before {
+    content: "";
+    position: absolute;
+    left: 20px;
+    bottom: -4px;
+    width: 50%;
+    border-bottom: 5px solid black;
+}
+.member_name {
+    font-size: 20px;
+    margin-bottom: 0px;
+}
+
+.faculty_list p {
+    margin-top: 10px;
+    margin-bottom: 0px;
+}
+
+.image-container img {
+    width: 150px;
+    height: 150px;
+    margin-bottom: 10px;
+}
+
+.team_members {
+    margin-bottom: 20px;
+    flex: 0 0 25%;
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.contact-info a img {
+    width: 30px;
+    height: 30px;
+    margin-bottom: 20px;
+    margin-top: 0px;
+}
+
+
+.member {
+    font-weight:300;
+    flex: 1;
+    min-height: 350px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px;
+    text-align: center;
+    padding: 10px;
+}
+
+.member img {
+    width: 150px;
+    height: 150px;
+    margin-bottom: 10px;
+}
+
+.member_name {
+    margin-bottom: 10px;
+}
+/*faculty.html*/
+
+
+/*facultypage.html start*/
+.name {
+    font-weight: 300;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 20px;
+    min-width: 20%;
+    max-width: 20%;
+    text-align: center;
+    margin-bottom: auto;
+
+}
+.name {
+    flex: 1;
+}
+.member_faculty {
+    flex: 0 0 100%;
+    display: flex;
+    align-items:center;
+}
+.description-container {
+    flex: 0 0 100%;
+    display: flex;
+    align-items: center;
+}
+#faculty-info {
+    font-weight: 300;
+    font-size: 20px;
+    margin-right: auto;
+    margin-bottom: 200px;
+    margin-right: auto;
+}
+#faculty_title {
+    margin-top: 200px;
+    padding-left: 20px;
+    font-size: 20px;
+    font-weight: bold;
+}
+#faculty_title {
+    position: relative;
+    display: inline-block;
+    font-size: 30px;
+}
+
+#faculty_title::after {
+    content: "";
+    position: absolute;
+    left: 40px;
+    bottom: -2px;
+    width: 100%;
+    border-bottom: 1px solid black;
+}
+
+#faculty_title::before {
+    content: "";
+    position: absolute;
+    left: 3px;
+    bottom: -4px;
+    width: 50%;
+    border-bottom: 5px solid black;
+}
+.description-container img {
+    padding-top: 20px;
+    width: 150px;
+    height: 150px;
+}
+#member_contact img {
+
+    width: 30px;
+    height: 30px;
+    margin-bottom: 20px;
+}
+/*facultypage.html end*/
+
+
+/*About.html starting*/
+#imageslider_at_about {
+    margin-top: 200px;
+}
+
+#message_from_department {
+    font-size: 30px;
+    padding-left: 30px;
+    width: 60%;
+    float: left;
+}
+
+#message {
+    padding-left: 30px;
+}
+
+#msg {
+    font-size: 20px;
+    color: #403e3e;
+}
+
+.accordion {
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+.accordion h2{
+    font-size: 20px;
+}
+
+#message_title {
+    font-size: 40px;
+    color: #3a5274;
+    font-weight: bold;
+}
+
+#message img {
+    display: block;
+    margin: 0 auto;
+    margin-top: 10px;
+}
+
+/* Style the accordion title (h2) */
+.accordion h2 {
+    background-color: #f1f1f1;
+    padding: 10px;
+    margin: 0;
+    cursor: pointer;
+    background: linear-gradient(to right, #74ebd5, #ACB6E5);
+}
+
+.accordion h2:hover {
+    background: linear-gradient(to right, #ACB6E5, #74ebd5);
+}
+
+/* Style the accordion content */
+.accordion .content {
+    display: none;
+    padding: 10px;
+}
+
+/* Style the active accordion title */
+.active {
+    background-color: #ddd;
+}
+
+#course_offered {
+    width: 35%;
+    float: right;
+    margin-top: 40px;
+    margin-right: 20px;
+}
+
+#course_offered h2 {
+    color: #3a5274;
+}
+
+#course-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 30px;
+}
+
+#course-table th,
+#course-table td {
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: left;
+}
+
+#course-table th {
+    background-color: #3a5274;
+    color: white;
+}
+
+#course-table tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.clearfix::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+#nav-bar-in-about table{
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 30px;
+    border: 1px solid #edede8;
+}
+#nav-bar-in-about th{
+    background-color: #d1d1cd;
+    border: 1px solid #edede8;
+    color: black;
+    text-decoration: underline;
+}
+#nav-bar-in-about th:hover:not(.active){
+    background-color: #faa7a7;
+}
+#nav-bar-in-about {
+    margin-top: 20px;
+}
+#nav-bar-in-about table th.active{
+    background-color: #faa7a7;
+}
+#nav-bar-in-about{
+    width: 100%;
+    border-collapse: collapse;
+}
+
+#nav-bar-in-about th {
+    background-color: #3a5274;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    cursor: pointer;
+}
+
+#content {
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-top: 20px;
+    font-weight: 100;
+    font-size: 20px;
+}
+.content-section {
+    display: none;
+}
+
+.content-section h2 {
+    color: #3a5274;
+}
+
+.content-section p {
+    font-size: 18px;
+    color: #403e3e;
+    line-height: 1.6;
+}
+/*About.html end*/
+
+/*regulation.html starting*/
+#regulation{
+    margin-top: 200px;
+}
+#subfolder2{
+    margin-top: 200px;
+}
+#subfolder ul{
+    padding-top: 100px;
+}
+/*regulation.html ending*/
+
+
+/*Contact.html starting*/
+#contact_title {
+    text-align: center;
+    font-size: 30px;
+}
+#contact_us {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 200px;
+    margin-bottom: 5%;
+    width: 70%;
+    height: auto;
+    margin-left: 15%;
+    border-radius: 20px;
+    flex-direction: column;
+    justify-content: space-between;
+    background: radial-gradient(circle at center, #ffffff, #f4f4f4, #e0e0e0, #ffffff), 
+                linear-gradient(45deg, #6a85b6, #ff9a9e);
+}
+
+#contact_us_academic{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    width: 65%;
+    height: auto;
+    margin-right: 25%;
+    margin-left: 25%;
+    border-radius: 20px;
+    flex-direction: column;
+    justify-content: space-between;
+    background: linear-gradient(45deg, #6a85b6, #ff9a9e);
+}
+
+#contact_academic {
+    width: 90%;
+    height: 200px;
+    border-radius: 20px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+}
+
+#contact_links {
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+}
+
+#contact_academic p {
+    text-align: center;
+    font-size: 15px;
+    margin-bottom: 0px;
+}
+#contact_links_call,
+#contact_links_email {
+    padding: 2px;
+    padding-left: 3px;
+    padding-right: 3px;
+    display: flex;
+    align-items: center;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+    background: linear-gradient(to right, #8B5CF6, #A888F3, #C2B1F0);
+}
+
+#contact_links_email:hover {
+    transform: translateY(10px);
+}
+
+#contact_links_call:hover {
+    transform: translateY(10px);
+}
+
+#contact_links_call img,
+#contact_links_email img {
+    margin-right: 10px;
+    width: 30px;
+    height: 30px;
+}
+
+
+/*contact.html ending*/
+
+
+footer {
+    margin-top: 40px;
+    background-color: #333;
+    color: white;
+    padding: 2px;
+    text-align: center;
+}
+footer a {
+    color: white;
+    text-decoration: underline;
+    text-align: center;
+    padding: 10px 0;
+    margin-top: auto;
+    transition: transform 0.3s ease;
+}
+#footer_links {
+    display: flex;
+    justify-content: center;
+}
+
+#footer_links a {
+    text-decoration: none;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 15px;
+    transition: transform 0.3s ease;
+}
+
+#footer_links a:hover {
+    transform: translateY(10px);
+}
+
+#footer_links img {
+    width: 30px;
+    height: 30px; 
+    margin-bottom: 5px; 
+    border-radius: 50%;
+    border-color: white;
+}
+
+#footer_links a span {
+    font-size: 18px;
+    margin-top: 5px; 
+}

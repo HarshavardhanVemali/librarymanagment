@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>MVGR DATA ENGINEERING</title>
+        <link rel="stylesheet" href="styles.css">
+        <script src="scripts.js"></script>
+        <link rel="icon" type="image/png" sizes="32x32" href="/static/images/department_logo.png">
+        {% load static %}
+        <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'css/adminlogin.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'css/adminstyles.css' %}">
+        <script src="{% static 'js/scripts.js' %}"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    </head>
+    <body>
+        <div class="login-container">
+            <div class="login-container-head">
+                <a href="https://www.mvgrce.com/" target="_blank">
+                    <img src="{% static 'images/college_logo.png' %}" alt="college_logo">
+                </a>
+                <h2>Dept of DE(MVGR)<br>Admin Login</h2>
+                <a id="img2">
+                    <img src="{% static 'images/department_logo.png' %}" alt="college_logo">
+                </a>
+            </div>
+            {% if error_message %}
+                <p class="error-message">{{ error_message }}</p>
+            {% endif %}
+            <form method="post" class="form1" {% if blocked %}disabled{% endif %}>
+                {% csrf_token %}
+                <div class="form-group">
+                    <input type="text" id="username" name="username" placeholder="Username" required>
+                </div>
+                <div class="form-group" id="password-field">
+                    <input type="password" id="password" name="password" placeholder="Password" required>
+                    <span class="toggle-password" onclick="togglePasswordVisibility()">
+                        <i class="fa fa-eye"></i>
+                    </span>                    
+                </div>                
+                <button type="submit" class="btn-login" {% if blocked %}disabled{% endif %}>Login</button>
+            </form>            
+        </div>         
+    </body>
+    <script>
+        function togglePasswordVisibility() {
+            var passwordField = document.getElementById("password");
+            var icon = document.querySelector(".toggle-password i");
+    
+            if (passwordField.type === "password") {
+                passwordField.type = "text";
+                icon.classList.remove("fa-eye");
+                icon.classList.add("fa-eye-slash");
+            } else {
+                passwordField.type = "password";
+                icon.classList.remove("fa-eye-slash");
+                icon.classList.add("fa-eye");
+            }
+        }
+    </script>    
+</html>

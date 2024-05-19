@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>MVGR DATA ENGINEERING</title>
+        <link rel="stylesheet" href="styles.css">
+        <script src="scripts.js"></script>
+        <link rel="icon" type="image/png" sizes="32x32" href="/static/images/department_logo.png">
+        {% load static %}
+        <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'css/adminstyles.css' %}">
+        <script src="{% static 'js/scripts.js' %}"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    </head>
+    <body>
+        <header>
+            <div id="college_title">
+                <div id="college_logo">
+                    <a href="https://www.mvgrce.com/" target="_blank">
+                        <img src="{% static 'images/college_logo.png' %}" alt="college_logo">
+                    </a>
+                </div>
+                <div id="college_sub_title">
+                    <h1>Maharaj Vijayaram Gajapathi Raj College of Engineering (Autonomous)</h1>
+                    <h1 id="dept_name1">Department Of Data Engineering Admin Page</h1>
+                </div>
+                <div id="department_logo">
+                    <a href="{% url 'index' %}">
+                        <img src="{% static 'images/department_logo.png' %}" alt="college_logo">
+                    </a>
+                </div>
+            </div>
+            <div class="navbar-in-admin">
+                <ul>
+                    <li><a class="nav-link" href="{% url 'adminpage' %}"><span>Home</span></a></li>
+                    <li><a class="nav-link" href="{% url 'adminregulation' %}"><span>Regulation</span></a></li>
+                    <li><a class="nav-link" href="{% url 'adminlibrary' %}"><span>Library</span></a></li>
+                </ul>
+            </div>
+            <div class="booksmanagment">
+                <div class="addbook">
+                    <h2>Add Books</h2>
+                    {% if messages %}
+                        <ul class="messages">
+                            {% for message in messages %}
+                                <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+                            {% endfor %}
+                        </ul>
+                    {% endif %}
+                    <form action="{% url 'admin_addbooks' %}" method="post" id="add-book-form">
+                        {% csrf_token %}
+                        {{ form.as_p }}
+                        <button type="submit">Add Book</button>
+                    </form>
+                </div>
+                <div class="searchbar">
+                    <input type="text" id="search-input-book" placeholder="Search Book Name/Author/Category...">
+                </div>
+                <div class="displaybooks">
+                    <h2>Books</h2>
+                    <table id="book-table">
+                        <thead>
+                            <tr>
+                                <th>Book Name</th>
+                                <th>Author</th>
+                                <th>Category</th>
+                                <th>Books Count</th>
+                                <th>Barcode</th>
+                                <th>Published By</th>
+                                <th>Condition</th>
+                                <th>Location</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for book in books %}
+                                <tr class="book-row">
+                                    <td>{{ book.book_name }}</td>
+                                    <td>{{ book.author }}</td>
+                                    <td>{{ book.category }}</td>
+                                    <td>{{ book.number_of_books }}</td>
+                                    <td>{{ book.barcode }}</td>
+                                    <td>{{ book.published_by }}</td>
+                                    <td>{{ book.condition }}</td>
+                                    <td>{{ book.location }}</td>
+                                    <td>
+                                        <form action="{% url 'delete_book' book.id %}" method="post">
+                                            {% csrf_token %}
+                                            <button type="submit">Delete</button>
+                                        </form>
+                                    </td>
+                                </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </body>
+        <script>
+            const barcodeInput = document.getElementById('barcode');
+            
+            // Function to be called when the barcode reader emits a scan
+            function handleBarcodeScan(barcode) {
+                barcodeInput.value = barcode; // Set the barcode in the input field
+                // Optionally, submit the form automatically (or trigger another action)
+                // addUserForm.submit(); 
+            }
+            
+            // (Add an event listener to capture barcode scans. The implementation will
+            //  depend on how you connect your barcode reader to the web page.)
+            // For example, using a keyboard-based reader:
+            window.addEventListener('keydown', (event) => {
+                // ... Logic to identify barcode scan events
+                //  (e.g., if the scan ends with a specific key like Enter) 
+                // ... 
+                handleBarcodeScan(event.key);
+            });
+    
+            // Wait for the DOM to be fully loaded before running the search code
+            document.addEventListener('DOMContentLoaded', function() {
+                const searchInput = document.getElementById('search-input-book');
+                const bookRows = document.querySelectorAll('.book-row');
+    
+                searchInput.addEventListener('keyup', () => {
+                    const searchTerm = searchInput.value.toLowerCase();
+                    bookRows.forEach(row => {
+                        const bookNameCell = row.querySelector('td:first-child');
+                        const authorCell = row.querySelector('td:nth-child(2)');
+                        const categoryCell = row.querySelector('td:nth-child(3)');
+                        const bookName = bookNameCell.textContent.toLowerCase();
+                        const author = authorCell.textContent.toLowerCase();
+                        const category = categoryCell.textContent.toLowerCase();
+    
+                        if (bookName.includes(searchTerm) || author.includes(searchTerm) || category.includes(searchTerm)) {
+                            row.style.display = ''; // Show the row
+                        } else {
+                            row.style.display = 'none'; // Hide the row
+                        }
+                    });
+                });
+            });
+        </script>
+    </html>
