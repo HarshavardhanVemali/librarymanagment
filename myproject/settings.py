@@ -25,7 +25,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-1e&=k-rv#43b(ic&(6fd&5!s+*368ng$0ufkoz)r)bd1e6_83h'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = os.environ.get('DEBUG','True')=="True"
 
 ALLOWED_HOSTS = ["*"]
 
@@ -82,15 +82,15 @@ application = get_wsgi_application()
 
 WSGI_APPLICATION = 'myproject.wsgi.application'
 
-
-DATABASES = {
+if not DEBUG:
+    DATABASES={
+        "default":dj_database_url.parse(os.environ.get("DATABASE_URL"))
+    }
+else:
+    DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'librarymanagment',
-        'USER': 'librarymanagment_user',
-        'PASSWORD': 'qXOQBLe01hBtCfU4BQFQbEPyS245DGTx',
-        'HOST': 'dpg-cp4r2i8cmk4c73enuk1g-a',
-        'PORT': '5432', 
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
 # Password validation
