@@ -421,13 +421,13 @@ document.addEventListener("DOMContentLoaded", function() {
             const contactDiv = document.getElementById('member_contact');
             contactDiv.innerHTML = `
                 <a href="${faculty.e}" target="_blank">
-                    <img src="images/mail.webp" alt="email">
+                    <img src="static/images/mail.webp" alt="email">
                 </a>
                 <a href="${faculty.linkedin}" target="_blank">
-                    <img src="images/linkedin.webp" alt="linkedin">
+                    <img src="static/images/linkedin.webp" alt="linkedin">
                 </a>
                 <a href="#" onclick="initiateCall('${faculty.phone}')">
-                    <img src="images/call.png" alt="call">
+                    <img src="static/images/call.png" alt="call">
                 </a>
             `;
             const facultyInfo = document.getElementById('faculty-info');

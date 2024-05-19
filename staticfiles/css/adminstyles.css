@@ -1,0 +1,1588 @@
+.adminpage{
+    margin-top: 200px;
+}
+.navbar-in-admin {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: black; 
+    height: 55px;
+}
+
+.navbar-in-admin ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex; 
+}
+
+.navbar-in-admin li {
+    margin: 0 10px;
+    align-items: center;
+}
+
+.navbar-in-admin li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 10px 25px; 
+    text-decoration: none;
+    transition: transform 0.3s ease;
+    font-size: 1.2em;
+}
+
+.navbar-in-admin li {
+    float: none;
+}
+
+.navbar-in-admin li a:not(.active) {
+    color: white;
+}
+
+.navbar-in-admin li a:hover {
+    color: #FFD700;
+    background-color: black;
+    border-radius: 10px;
+    box-shadow: 0 0 5px #FFA07A, 0 0 10px #FFA07A;
+}
+
+.navbar-in-admin  li a:active {
+    color: #ffc947;
+    background-color: black;
+    border-radius: 10px;
+    box-shadow: 0 0 5px #ffc947, 0 0 10px #ffc947;
+}
+
+.logout {
+    display: flex;
+    height: 30px;
+    width: 100px;
+    border: 2px solid #c2021f;
+    background-color: #c2021f;
+    border-radius: 5px;
+    align-items: center; 
+    justify-content: center; 
+    cursor: pointer;
+    margin-left: 93%;
+    margin-bottom: 20px;
+}
+.logout a {
+    color: white; 
+    text-decoration: none;
+}
+.logout a:hover{
+    color: black;
+}
+/*adminhome*/
+#Upload-images-at-home h2 {
+    margin: 0;
+}
+.add-home-img {
+    display: flex;
+    align-items: center;
+}
+.add-home-img form {
+    display: flex;
+    align-items: center;
+}
+
+.add-home-img input[type="submit"],
+.add-home-img button {
+    padding: 5px 10px;
+    border: none;
+    cursor: pointer;
+}
+#Upload-images-at-home {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border-bottom:1px solid #888;
+}
+#upload{
+    text-align: center;
+    cursor: pointer;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    height: 30px;
+    width: auto;
+    font-size: 18px;
+    background-color:dodgerblue;
+}
+#upload:hover{
+    background-color: lightskyblue;
+}
+.image-managment-at-home{
+    border: 2px solid black;
+    margin-left: 10px;
+    margin-right: 10px;
+    border-radius: 10px;
+}
+.uploaded-images {
+    background: radial-gradient(circle at center, #ffffff, #f4f4f4, #e0e0e0, #ffffff), linear-gradient(45deg, #6a85b6, #ff9a9e);
+    border-radius: 0 0 10px 10px;
+}
+
+.image-container {
+    padding-top: 10px;
+    display: flex;
+    align-items: center;
+    padding-bottom: 10px;
+    border-top: 1px solid #6a85b6;
+}
+.image-container > div {
+    margin-left: 20px;
+    margin-right: 20px;
+    display: flex;
+    align-items: center;
+}
+.image-container > div img {
+    margin-right: 20px;
+    cursor: pointer;
+    width: 30px;
+    height: 30px;
+}
+.image-container > div p {
+    cursor: pointer;
+    color: black;
+    margin: 0;
+}
+.delete-btn {
+    text-align: center;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    background: none;
+    border: none;
+    color: red;
+    padding: 0;
+    margin-left: auto;
+    margin-right: 10px; 
+    border: 1px solid black;
+    border-radius: 5px;
+    z-index: 9999;
+}
+.delete-btn:hover{
+    background-color: red;
+    color: black;
+}
+.image-managment-at-about{
+    margin-top: 40px;
+    border: 2px solid black;
+    margin-left: 10px;
+    margin-right: 10px;
+    border-radius: 10px;
+}
+#Upload-images-at-about h2 {
+    margin: 0;
+}
+#Upload-images-at-about {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border-bottom:1px solid #888;
+}
+#upload-about{
+    text-align: center;
+    cursor: pointer;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    height: 30px;
+    width: 150px;
+    font-size: 18px;
+    background-color:dodgerblue;
+}
+#upload-about:hover{
+    background-color: lightskyblue;
+}
+/*adminregulation*/
+
+#add-regulation h2 {
+    margin: 0;
+    font-size: 24px;
+    font-weight: 500;
+}
+.add-reg {
+    display: flex;
+    align-items: center;
+}
+.add-reg form {
+    display: flex;
+    align-items: center;
+}
+
+.add-reg input[type="submit"],
+.add-reg button {
+    padding: 5px 10px;
+    border: none;
+    cursor: pointer;
+}
+#add-regulation {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border-bottom:1px solid #888;
+}
+#submitreg{
+    margin-left: 10px;
+    text-align: center;
+    cursor: pointer;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    height: 30px;
+    width: 180px;
+    font-size: 18px;
+    background-color:dodgerblue;
+}
+#submitreg:hover{
+    background-color: lightskyblue;
+}
+.regulation-managment{
+    border: 2px solid black;
+    margin-left: 10px;
+    margin-right: 10px;
+    border-radius: 10px;
+}
+#folderForm input{
+    height: 30px;
+    margin-left: 5px;
+}
+#folder_structure > div{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    border-top: 1px solid #6a85b6;
+}
+.folder-container {
+    padding-top: 10px;
+    display: flex;
+    align-items: center;
+    padding-bottom: 10px;
+    border-top: 1px solid #6a85b6;
+}
+
+.folder-container > div {
+    display: flex; 
+    align-items: center;
+}
+
+.folder-container > div img {
+    margin-right: 20px;
+    cursor: pointer;
+    width: 30px;
+    height: 30px;
+    margin-left: 20px;
+}
+
+.folder-container > div p {
+    cursor: pointer;
+    color: black;
+    margin: 0;
+}
+#folder_structure{
+    background: radial-gradient(circle at center, #ffffff, #f4f4f4, #e0e0e0, #ffffff), linear-gradient(45deg, #6a85b6, #ff9a9e);
+    border-radius: 0 0 10px 10px;   
+}
+/*admin_regulation_subfolder*/
+.admin_subfolder_managment{
+    border: 2px solid black;
+    margin-left: 10px;
+    margin-right: 10px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+#add-regulation-sub {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border-bottom:1px solid #888;
+}
+.add-reg-sub input[type="file"]{
+    padding-left: 20px;
+    border: none;
+    cursor: pointer;
+}
+#folderForm input[type='text'],#fileForm input[type='text']{
+    height: 30px;
+    border-radius: 5px;
+    border: 1px solid black;
+    padding-left: 10px;
+
+}
+#folderForm input[type='text']:hover,#fileForm input[type='text']:hover{
+    border: 2px solid black;
+}
+#accept_file{
+    width: auto;
+    border: 1px solid black;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border-radius: 5px;
+
+}
+#accept_file:hover{
+    border: 2px solid black;
+}
+#addfolder{
+    margin-left: 10px;
+    text-align: center;
+    cursor: pointer;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    height:auto;
+    font-size: 18px;
+    background-color:dodgerblue;
+    padding: 5px ;
+}
+.admin_subfolderwrap > div{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    border-top: 1px solid #6a85b6;
+}
+.admin_subfolderwrap{
+    background: radial-gradient(circle at center, #ffffff, #f4f4f4, #e0e0e0, #ffffff), linear-gradient(45deg, #6a85b6, #ff9a9e);
+    border-radius: 0 0 10px 10px;
+}
+#admin-file{
+    padding-left: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border-top: 1px solid #6a85b6;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+#admin-file div i{
+    padding-right: 30px;
+}
+#fileicon{
+    font-size: 24px;
+    color: dodgerblue;
+    padding-left: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+#file-submit{
+    margin-left: 10px;
+    text-align: center;
+    cursor: pointer;
+    justify-content: center;
+    align-items: center;
+    border-radius:5px;
+    height: auto;
+    font-size: 18px;
+    background-color:dodgerblue;
+    padding: 5px;
+}
+#file-submit:hover,#addfolder:hover{
+    background-color: lightskyblue;
+}
+.add-reg-sub form {
+    display: inline-block;
+    margin-right: 10px; /* Optional spacing between forms */
+  }
+  .popup-message {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #ffffff;
+    padding: 10px 20px;
+    border: 2px solid #007bff;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+    z-index: 9999;
+}
+
+.popup-message span {
+    color: #007bff;
+    font-weight: bold;
+}
+/*adminlibrary*/
+.addusers > a div{ 
+    margin-top: 200px;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    border: 1px solid black;
+    color: black;
+    padding-left: 30px;
+    margin-left: 20px;
+    margin-right: 20px;
+    border-radius: 10px;
+    height: 50px;
+}
+.addusers a img{
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+}
+.addbooks > a div{ 
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    border: 1px solid black;
+    color: black;
+    padding-left: 30px;
+    margin-left: 20px;
+    margin-right: 20px;
+    border-radius: 10px;
+    height: 50px;
+}
+.addbooks a img{
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+
+}
+.issuebooks > a div{ 
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    border: 1px solid black;
+    color: black;
+    padding-left: 30px;
+    margin-left: 20px;
+    margin-right: 20px;
+    border-radius: 10px;
+    height: 50px;
+}
+.issuebooks a img{
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+
+}
+.usermanagment{
+    margin-top: 200px;
+    border: 1px solid black;
+    margin-left: 20px;
+    margin-right: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+.adduser{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+.searchbar{
+    text-align: center;
+    margin-bottom: 10px;
+    border-bottom:1px solid #6a85b6;
+}
+.searchbar input{
+    height: 30px;
+    width: 300px;
+    border-radius: 20px;
+    text-align: center;
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+.adduser > div form input{
+    height: 25px;
+    border-radius: 5px;
+    border: 1px solid black;
+}
+.adduser > div form select{
+    height: 25px;
+    border-radius: 5px;
+    border: 1px solid black;
+}
+#submit{
+    border-radius: 5px;
+    height: 30px;
+    border: 1px solid black;
+    background-color: dodgerblue;
+    cursor: pointer;
+}
+.displayusers{
+    margin-bottom: 20px;
+}
+.displayusers h2{
+    padding-left: 20px;
+}
+.searchbar input{
+    margin-top: 10px;
+    height: 30px;
+    width:400px;
+    border-radius: 20px;
+    text-align: center;
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+.booksmanagment{
+    margin-top: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
+    border: 1px solid black;
+    border-radius: 10px;
+}
+.addbook{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+.addbook > div form input{
+    width:100px;
+    height: 30px;
+    border-radius: 5px;
+    border: 1px solid black;
+}
+
+#book-table{
+    margin-bottom: 20px;
+}
+.bookissuemanagment{
+    margin-top: 200px;
+    border: 1px solid black;
+    margin-left: 20px;
+    margin-right: 20px;
+    border-radius: 20px;
+}
+.checkdetails{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    
+    padding-left: 20px;
+    padding-right: 20px;
+}
+.checkdetails > div form input{
+    height: 30px;
+    border-radius: 10px;
+    border: 1px solid black;
+}
+.displayusers{
+    border-top:1px solid#6a85b6;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-top: 20px;
+}
+.displayusers > div{
+    padding-top: 10px;
+}
+.displayusers > div input{
+    height: 30px;
+    border-radius: 10px;
+    border: 1px solid black;
+}
+#user-not-found{
+    font-size: 24px;
+    text-align: center;
+    margin-bottom: 20px;
+    border-top:1px solid#6a85b6;
+}
+#user-id-card {
+    margin-top: 10px;
+    border: 1px solid #ccc;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    width: 400px;
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+  
+  #user-id-card p {
+    margin-bottom: 10px;
+    
+  }
+  
+  #user-id-card strong {
+    display: inline-block; 
+    width: 120px; 
+    margin-right: 10px; 
+  }
+  
+  #user-id-card span {
+    font-weight: normal; 
+  }
+  .displaybooks{
+    margin-bottom: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+@media only screen and (max-width: 375px){
+    .adminpage{
+        margin-top: 70px;
+    }
+    .navbar-in-admin {
+        height: 20px;
+        font-size: 8px;
+    }
+    .navbar-in-admin li a {
+        padding: 10px 10px; 
+    }
+    .logout {
+        height: 20px;
+        width: 50px;
+        margin-left: 80%;
+        font-size: 8px;
+    }
+    /*adminhome*/
+    #Upload-images-at-home h2 {
+        margin: 0;
+        font-size: 6px;
+    }
+    
+    .add-home-img input[type="submit"],
+    .add-home-img button {
+        border: none;
+        cursor: pointer;
+    }
+    .add-home-img input[type='file']{
+        font-size: 4px;
+    }
+    #Upload-images-at-home {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px;
+        border-bottom:1px solid #888;
+        border-radius: 3px;
+    }
+    #upload{
+        border-radius: 10px;
+        height: auto;
+        width: auto;
+        font-size: 6px;
+    }
+    .image-managment-at-home{
+        margin-left: 5px;
+        margin-right: 5px;
+    }
+    .image-container > div {
+        margin-left: 5px;
+        margin-right: 5px;
+        font-size: 6px;
+    }
+    .image-container > div img {
+        margin-right: 5px;
+        width: 10px;
+        height: 10px;
+    }
+    .image-container > div p {
+        cursor: pointer;
+        color: black;
+        margin: 0;
+    }
+    .delete-btn {
+        margin-right: 5px; 
+        border: 1px solid black;
+        border-radius: 2px;
+        font-size: 6px;
+    }
+    .delete-btn i{
+        font-size: 6px;
+    }
+    .delete-btn:hover{
+        background-color: red;
+        color: black;
+    }
+    .image-managment-at-about{
+        margin-top: 40px;
+        border: 2px solid black;
+        margin-left: 10px;
+        margin-right: 10px;
+        border-radius: 10px;
+    }
+    #Upload-images-at-about h2 {
+        margin: 0;
+    }
+    #Upload-images-at-about {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px;
+        border-bottom:1px solid #888;
+    }
+    #upload-about{
+        text-align: center;
+        cursor: pointer;
+        justify-content: center;
+        align-items: center;
+        border-radius: 10px;
+        height: 30px;
+        width: 150px;
+        font-size: 18px;
+        background-color:dodgerblue;
+    }
+    #upload-about:hover{
+        background-color: lightskyblue;
+    }
+    /*adminregulation*/
+    
+    #add-regulation h2 {
+        font-size: 8px;
+    }
+    
+    .add-reg input[type="submit"],
+    .add-reg button {
+        padding: 5px 5px;
+    }
+    #add-regulation {
+        padding: 10px;
+
+    }
+    #folderForm{
+        font-size: 6px;
+    }
+    #folderForm input{
+        width: auto;
+        font-size: 6px;
+    }
+    #folder_name{
+        width: 10px;
+        height: 5px;
+    }
+    #submitreg{
+        border-radius: 3px;
+        height: auto;
+        width: auto;
+        font-size: 6px;
+    }
+    .regulation-managment{
+        border: 2px solid black;
+        margin-left: 5px;
+        margin-right: 5px;
+        border-radius: 5px;
+    }
+    .folder-container {
+        padding-top: 5px;
+        padding-bottom: 5px;
+        border-top: 1px solid #6a85b6;
+    }
+    .folder-container > div img {
+        margin-right: 5px;
+        width: 10px;
+        height: 10px;
+        margin-left: 5px;
+    }
+    .folder-container > div p {
+        font-size: 8px;
+    }
+    /*admin_regulation_subfolder*/
+
+    .admin_subfolder_managment{
+        font-size: 4px;
+        border: 2px solid black;
+        margin-left: 3px;
+        margin-right: 3px;
+        border-radius: 5px;
+    }
+    #add-regulation-sub {
+        padding: 1px;
+        border-bottom:1px solid #888;
+    }
+    #add-regulation-sub p{
+        font-size: 6px;
+    }
+    .add-reg-sub input[type="file"]{
+        padding-left: 5px;
+    }
+    #folderForm input[type='text'],#fileForm input[type='text']{
+        height: 10px;
+        border-radius: 2px;
+        border: 1px solid black;
+        padding-left: 5px;
+        font-size: 5px;
+        width:40px;
+    
+    }
+    #accept_file{
+        width: auto;
+        border: 1px solid black;
+        padding-top: 5px;
+        padding-bottom: 2px;
+        border-radius: 2px;
+    }
+    #addfolder{
+        margin-left: 0px;
+        border-radius: 3px;
+        height:auto;
+        font-size: 6px;
+        background-color:dodgerblue;
+        padding:2px ;
+    }
+    
+    .admin_subfolderwrap{
+        background: radial-gradient(circle at center, #ffffff, #f4f4f4, #e0e0e0, #ffffff), linear-gradient(45deg, #6a85b6, #ff9a9e);
+        border-radius: 0 0 10px 10px;
+    }
+    #admin-file{
+        padding-left: 3px;
+        padding-top: 3px;
+        padding-bottom: 3px;
+        border-top: 1px solid #6a85b6;
+    }
+    #fileicon{
+        font-size: 6px;
+        color: dodgerblue;
+        padding-left: 5px;
+        padding-top: 5px;
+        padding-bottom: 5px;
+    }
+    #accept_file{
+        width: auto;
+        border: 1px solid black;
+        padding-top: 2px;
+        padding-bottom: 2px;
+        border-radius: 2px;
+        font-size: 4px;
+    
+    }
+    #accept_file:hover{
+        border: 2px solid black;
+    }
+    #file-submit{
+        margin-left: 5px;
+        border-radius:3px;
+        height: auto;
+        font-size: 6px;
+        background-color:dodgerblue;
+        padding: 2px;
+    }
+      .popup-message {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: #ffffff;
+        padding: 10px 20px;
+        border: 2px solid #007bff;
+        border-radius: 5px;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+        z-index: 9999;
+    }
+    
+    .popup-message span {
+        color: #007bff;
+        font-weight: bold;
+    }
+}
+@media only screen and (min-width: 376px) and (max-width: 480px) {
+    .adminpage{
+        margin-top: 80px;
+    }
+    .navbar-in-admin {
+        height: 20px;
+        font-size: 8px;
+    }
+    .navbar-in-admin li a {
+        padding: 10px 10px; 
+    }
+    .logout {
+        height: 20px;
+        width: 50px;
+        margin-left: 80%;
+        font-size: 8px;
+    }
+    /*adminhome*/
+    #Upload-images-at-home h2 {
+        margin: 0;
+        font-size: 10px;
+    }
+    
+    .add-home-img input[type="submit"],
+    .add-home-img button {
+        border: none;
+        cursor: pointer;
+    }
+    .add-home-img input[type='file']{
+        font-size: 5px;
+    }
+    #Upload-images-at-home {
+        padding: 10px;
+        border-bottom:1px solid #888;
+        border-radius: 3px;
+    }
+    #upload{
+        border-radius: 10px;
+        height: auto;
+        width: auto;
+        font-size: 6px;
+    }
+    .image-managment-at-home{
+        margin-left: 5px;
+        margin-right: 5px;
+    }
+    .image-container > div {
+        margin-left: 5px;
+        margin-right: 5px;
+        font-size: 6px;
+    }
+    .image-container > div img {
+        margin-right: 5px;
+        width: 15px;
+        height: 15px;
+    }
+    .image-container > div p {
+        color: black;
+        margin: 0;
+    }
+    .delete-btn {
+        margin-right: 5px; 
+        border: 1px solid black;
+        border-radius: 2px;
+        font-size: 6px;
+    }
+    .delete-btn i{
+        font-size: 6px;
+    }
+    .delete-btn:hover{
+        background-color: red;
+        color: black;
+    }
+    .image-managment-at-about{
+        margin-top: 40px;
+        border: 2px solid black;
+        margin-left: 10px;
+        margin-right: 10px;
+        border-radius: 10px;
+    }
+    #Upload-images-at-about h2 {
+        margin: 0;
+    }
+    #Upload-images-at-about {
+        padding: 10px;
+        border-bottom:1px solid #888;
+    }
+    #upload-about{
+        border-radius: 10px;
+        height: 30px;
+        width: 150px;
+        font-size: 18px;
+        background-color:dodgerblue;
+    }
+    #upload-about:hover{
+        background-color: lightskyblue;
+    }
+    /*adminregulation*/
+    
+    #add-regulation h2 {
+        font-size: 10px;
+    }
+    
+    .add-reg input[type="submit"],
+    .add-reg button {
+        padding: 5px 5px;
+    }
+    #add-regulation {
+        padding: 10px;
+
+    }
+    #folderForm{
+        font-size: 6px;
+    }
+    #folderForm input{
+        width: auto;
+        font-size:8px;
+    }
+    #folder_name{
+        width: 10px;
+        height: 5px;
+    }
+    #submitreg{
+        border-radius: 3px;
+        height: auto;
+        width: auto;
+        font-size: 8px;
+    }
+    .regulation-managment{
+        border: 2px solid black;
+        margin-left: 5px;
+        margin-right: 5px;
+        border-radius: 5px;
+    }
+    .folder-container {
+        padding-top: 5px;
+        padding-bottom: 5px;
+        border-top: 1px solid #6a85b6;
+    }
+    .folder-container > div img {
+        margin-right: 5px;
+        width: 15px;
+        height: 15px;
+        margin-left: 5px;
+    }
+    .folder-container > div p {
+        font-size: 10px;
+    }
+    /*admin_regulation_subfolder*/
+
+    .admin_subfolder_managment{
+        font-size: 4px;
+        border: 2px solid black;
+        margin-left: 3px;
+        margin-right: 3px;
+        border-radius: 5px;
+    }
+    #add-regulation-sub {
+        padding: 1px;
+        border-bottom:1px solid #888;
+    }
+    #add-regulation-sub p{
+        font-size: 10px;
+    }
+    .add-reg-sub input[type="file"]{
+        padding-left: 5px;
+    }
+    #folderForm input[type='text'],#fileForm input[type='text']{
+        height: 10px;
+        border-radius: 2px;
+        border: 1px solid black;
+        padding-left: 5px;
+        font-size: 8px;
+        width:40px;
+    
+    }
+    #filename{
+        font-size: 8px;
+    }
+    #accept_file{
+        width: auto;
+        border: 1px solid black;
+        padding-top: 5px;
+        padding-bottom: 2px;
+        border-radius: 2px;
+    }
+    #addfolder{
+        margin-left: 0px;
+        border-radius: 3px;
+        height:auto;
+        font-size: 6px;
+        background-color:dodgerblue;
+        padding:2px ;
+    }
+    
+    .admin_subfolderwrap{
+        background: radial-gradient(circle at center, #ffffff, #f4f4f4, #e0e0e0, #ffffff), linear-gradient(45deg, #6a85b6, #ff9a9e);
+        border-radius: 0 0 10px 10px;
+    }
+    #admin-file{
+        padding-left: 3px;
+        padding-top: 3px;
+        padding-bottom: 3px;
+        border-top: 1px solid #6a85b6;
+    }
+    #fileicon{
+        font-size: 10px;
+        color: dodgerblue;
+        padding-left: 5px;
+        padding-top: 1px;
+        padding-bottom: 1px;
+    }
+    #accept_file{
+        width: auto;
+        border: 1px solid black;
+        padding-top: 2px;
+        padding-bottom: 2px;
+        border-radius: 2px;
+        font-size: 4px;
+    
+    }
+    #accept_file:hover{
+        border: 2px solid black;
+    }
+    #file-submit{
+        margin-left: 5px;
+        border-radius:3px;
+        height: auto;
+        font-size: 6px;
+        background-color:dodgerblue;
+        padding: 2px;
+    }
+      .popup-message {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: #ffffff;
+        padding: 10px 20px;
+        border: 2px solid #007bff;
+        border-radius: 5px;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+        z-index: 9999;
+    }
+    
+    .popup-message span {
+        color: #007bff;
+        font-weight: bold;
+    }
+}
+@media only screen and (min-width: 481px) and (max-width: 768px){
+     .adminpage{
+        margin-top:120px;
+    }
+    .navbar-in-admin {
+        height: 30px;
+        font-size: 10px;
+    }
+    .navbar-in-admin li a {
+        padding: 10px 10px; 
+    }
+    .logout {
+        height: 20px;
+        width: 50px;
+        margin-left: 85%;
+        font-size: 10px;
+    }
+    /*adminhome*/
+    #Upload-images-at-home h2 {
+        margin: 0;
+        font-size: 12px;
+    }
+    
+    .add-home-img input[type='file']{
+        font-size: 5px;
+    }
+
+    #upload{
+        border-radius: 5px;
+        height: auto;
+        width: auto;
+        font-size: 10px;
+    }
+    .image-managment-at-home{
+        margin-left: 5px;
+        margin-right: 5px;
+    }
+    .image-container > div {
+        margin-left: 5px;
+        margin-right: 5px;
+        font-size:8px;
+    }
+    .image-container > div img {
+        margin-right: 5px;
+        width: 18px;
+        height: 18px;
+    }
+    .delete-btn {
+        margin-right: 5px; 
+        border: 1px solid black;
+        border-radius: 2px;
+        font-size: 10px;
+    }
+    .delete-btn i{
+        font-size: 10px;
+    }
+    .delete-btn:hover{
+        background-color: red;
+        color: black;
+    }
+    .image-managment-at-about{
+        margin-top: 40px;
+        border: 2px solid black;
+        margin-left: 10px;
+        margin-right: 10px;
+        border-radius: 10px;
+    }
+    #Upload-images-at-about h2 {
+        margin: 0;
+    }
+    #Upload-images-at-about {
+        padding: 10px;
+        border-bottom:1px solid #888;
+    }
+    #upload-about{
+        border-radius: 10px;
+        height: 30px;
+        width: 150px;
+        font-size: 18px;
+        background-color:dodgerblue;
+    }
+    #upload-about:hover{
+        background-color: lightskyblue;
+    }
+    /*adminregulation*/
+    
+    #add-regulation h2 {
+        font-size: 10px;
+    }
+    
+    .add-reg input[type="submit"],
+    .add-reg button {
+        padding: 5px 5px;
+    }
+    #add-regulation {
+        padding: 12px;
+
+    }
+
+    #folderForm input{
+        width: auto;
+        font-size:10px;
+    }
+    #folder_name{
+        width: 10px;
+        height: 5px;
+    }
+    #submitreg{
+        border-radius: 3px;
+        height: auto;
+        width: auto;
+        font-size: 8px;
+    }
+    .regulation-managment{
+        border: 2px solid black;
+        margin-left: 5px;
+        margin-right: 5px;
+        border-radius: 5px;
+    }
+    .folder-container {
+        padding-top: 5px;
+        padding-bottom: 5px;
+        border-top: 1px solid #6a85b6;
+    }
+    .folder-container > div img {
+        margin-right: 5px;
+        width: 18px;
+        height: 18px;
+        margin-left: 5px;
+    }
+    .folder-container > div p {
+        font-size: 10px;
+    }
+    /*admin_regulation_subfolder*/
+
+    .admin_subfolder_managment{
+        border: 2px solid black;
+        margin-left: 3px;
+        margin-right: 3px;
+        border-radius: 5px;
+    }
+    #add-regulation-sub {
+        padding: 1px;
+        border-bottom:1px solid #888;
+    }
+    #add-regulation-sub p{
+        font-size: 13px;
+    }
+    .add-reg-sub input[type="file"]{
+        padding-left: 5px;
+    }
+    #folderForm input[type='text'],#fileForm input[type='text']{
+        height: 10px;
+        border-radius: 2px;
+        border: 1px solid black;
+        padding-left: 5px;
+        font-size: 8px;
+        width:auto;
+    
+    }
+    #filename{
+        font-size: 10px;
+    }
+    #accept_file{
+        width: auto;
+        border: 1px solid black;
+        padding-top: 5px;
+        padding-bottom: 2px;
+        border-radius: 2px;
+    }
+    #addfolder{
+        margin-left: 0px;
+        border-radius: 3px;
+        height:auto;
+        font-size: 6px;
+        background-color:dodgerblue;
+        padding:2px ;
+    }
+    
+    .admin_subfolderwrap{
+        background: radial-gradient(circle at center, #ffffff, #f4f4f4, #e0e0e0, #ffffff), linear-gradient(45deg, #6a85b6, #ff9a9e);
+        border-radius: 0 0 10px 10px;
+    }
+    #admin-file{
+        padding-left: 3px;
+        padding-top: 3px;
+        padding-bottom: 3px;
+        border-top: 1px solid #6a85b6;
+    }
+    #fileicon{
+        font-size: 10px;
+        color: dodgerblue;
+        padding-left: 5px;
+        padding-top: 1px;
+        padding-bottom: 1px;
+    }
+    #accept_file{
+        width: auto;
+        border: 1px solid black;
+        padding-top: 2px;
+        padding-bottom: 2px;
+        border-radius: 2px;
+        font-size: 6px;
+        
+    
+    }
+    #accept_file:hover{
+        border: 2px solid black;
+    }
+    #file-submit{
+        margin-left: 5px;
+        border-radius:3px;
+        height: auto;
+        font-size: 6px;
+        background-color:dodgerblue;
+        padding: 2px;
+    }
+}
+@media only screen and (min-width: 769px) and (max-width: 979px) {
+    .adminpage{
+        margin-top:120px;
+    }
+    .navbar-in-admin {
+        height: 30px;
+        font-size: 10px;
+    }
+    .navbar-in-admin li a {
+        padding: 10px 10px; 
+    }
+    .logout {
+        height: 30px;
+        width: 100px;
+        margin-left: 85%;
+        font-size: 15px;
+    }
+    /*adminhome*/
+    #Upload-images-at-home h2 {
+        margin: 0;
+        font-size: 17px;
+    }
+    
+    .add-home-img input[type='file']{
+        font-size: 12px;
+    }
+
+    #upload{
+        border-radius: 5px;
+        height: auto;
+        width: auto;
+        font-size: 12px;
+    }
+    .image-managment-at-home{
+        margin-left: 5px;
+        margin-right: 5px;
+    }
+    .image-container > div {
+        margin-left: 5px;
+        margin-right: 5px;
+        font-size:10px;
+    }
+    .image-container > div img {
+        margin-right: 5px;
+        width: 20px;
+        height: 20px;
+    }
+    .delete-btn {
+        margin-right: 5px; 
+        border: 1px solid black;
+        border-radius: 2px;
+        font-size: 12px;
+    }
+    .delete-btn i{
+        font-size: 12px;
+    }
+    .delete-btn:hover{
+        background-color: red;
+        color: black;
+    }
+    .image-managment-at-about{
+        margin-top: 40px;
+        border: 2px solid black;
+        margin-left: 10px;
+        margin-right: 10px;
+        border-radius: 10px;
+    }
+    #Upload-images-at-about h2 {
+        margin: 0;
+    }
+    #Upload-images-at-about {
+        padding: 10px;
+        border-bottom:1px solid #888;
+    }
+    #upload-about{
+        border-radius: 10px;
+        height: 30px;
+        width: 150px;
+        font-size: 18px;
+        background-color:dodgerblue;
+    }
+    #upload-about:hover{
+        background-color: lightskyblue;
+    }
+    /*adminregulation*/
+    
+    #add-regulation h2 {
+        font-size: 12px;
+    }
+    
+    .add-reg input[type="submit"],
+    .add-reg button {
+        padding: 5px 5px;
+    }
+    #add-regulation {
+        padding: 12px;
+
+    }
+
+    #folderForm input{
+        width: auto;
+        font-size:12px;
+    }
+    #folder_name{
+        width: 12px;
+        height: 6px;
+    }
+    #submitreg{
+        border-radius: 3px;
+        height: auto;
+        width: auto;
+        font-size: 10px;
+    }
+    .regulation-managment{
+        border: 2px solid black;
+        margin-left: 5px;
+        margin-right: 5px;
+        border-radius: 5px;
+    }
+    .folder-container {
+        padding-top: 5px;
+        padding-bottom: 5px;
+        border-top: 1px solid #6a85b6;
+    }
+    .folder-container > div img {
+        margin-right: 5px;
+        width: 18px;
+        height: 18px;
+        margin-left: 5px;
+    }
+    .folder-container > div p {
+        font-size: 10px;
+    }
+    /*admin_regulation_subfolder*/
+
+    .admin_subfolder_managment{
+        border: 2px solid black;
+        margin-left: 3px;
+        margin-right: 3px;
+        border-radius: 5px;
+    }
+    #add-regulation-sub {
+        padding: 1px;
+        border-bottom:1px solid #888;
+    }
+    #add-regulation-sub p{
+        font-size: 13px;
+    }
+    .add-reg-sub input[type="file"]{
+        padding-left: 5px;
+    }
+    #folderForm input[type='text'],#fileForm input[type='text']{
+        height: 20px;
+        border-radius: 2px;
+        border: 1px solid black;
+        padding-left: 5px;
+        font-size: 10px;
+        width:auto;
+    
+    }
+    #filename{
+        font-size: 12px;
+    }
+    #accept_file{
+        
+        border: 1px solid black;
+        padding-top: 5px;
+        padding-bottom: 2px;
+        border-radius: 2px;
+        font-size: 10px;
+    }
+    #addfolder{
+        margin-left: 0px;
+        border-radius: 3px;
+        height:auto;
+        font-size: 12px;
+        background-color:dodgerblue;
+        padding:2px ;
+    }
+    
+    .admin_subfolderwrap{
+        background: radial-gradient(circle at center, #ffffff, #f4f4f4, #e0e0e0, #ffffff), linear-gradient(45deg, #6a85b6, #ff9a9e);
+        border-radius: 0 0 10px 10px;
+    }
+    #admin-file{
+        padding-left: 3px;
+        padding-top: 3px;
+        padding-bottom: 3px;
+        border-top: 1px solid #6a85b6;
+    }
+    #fileicon{
+        font-size: 10px;
+        color: dodgerblue;
+        padding-left: 5px;
+        padding-top: 1px;
+        padding-bottom: 1px;
+    }
+    #accept_file{
+        width: auto;
+        border: 1px solid black;
+        padding-top: 2px;
+        padding-bottom: 2px;
+        border-radius: 2px;
+        font-size: 10px;
+        
+    
+    }
+    #accept_file:hover{
+        border: 2px solid black;
+    }
+    #file-submit{
+        margin-left: 5px;
+        border-radius:3px;
+        height: auto;
+        font-size: 12px;
+        background-color:dodgerblue;
+        padding: 2px;
+    }
+}
+@media only screen and (min-width: 980px) and (max-width: 1024px){
+    .logout {
+        height: 30px;
+        width: 100px;
+        margin-left: 88%;
+        font-size: 18px;
+    }
+}
+@media only screen and (min-width: 1025px) and (max-width: 1399px){
+    .logout {
+        height: 30px;
+        width: 100px;
+        margin-left: 90%;
+        font-size: 20px;
+    }
+}

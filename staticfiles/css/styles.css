@@ -1,7 +1,7 @@
 body, html {
     height: 100%;
     margin: 0;
-    overflow-x: hidden; 
+    overflow-x: hidden;
 }
 .wrapper {
     display: flex;
@@ -13,7 +13,12 @@ body {
     font-family: sans-serif;
     -ms-text-size-adjust: 100%;
     -webkit-text-size-adjust: 100%;
-    margin: 0;
+    min-height: 100vh;
+    overflow-x: hidden;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  margin-top: auto;
     padding: 0;
     transition: background-color 0.3s ease;
     overflow-x: hidden;
@@ -64,7 +69,9 @@ header {
     margin-top: 177px;
     background-color: #e6ebeb;
 }
-
+.dropdown {
+    display: none;
+}
 #nav_bar {
     display: flex;
     align-items: center;
@@ -292,6 +299,7 @@ td.date {
 #faculty_at_home_page_member span {
     display: block;
 }
+
 /*index.html css end*/
 
 
@@ -457,6 +465,16 @@ td.date {
     height: 30px;
     margin-bottom: 20px;
 }
+#faculty-info h2{
+    font-size: 24px;
+}
+#facultu-info p{
+    font-size: 15px;
+    font-weight: 100;
+}
+.faculty-heading{
+    font-size: 20px;
+}
 /*facultypage.html end*/
 
 
@@ -540,7 +558,7 @@ td.date {
 #course-table {
     width: 100%;
     border-collapse: collapse;
-    margin-top: 30px;
+    margin-top: 5px;
 }
 
 #course-table th,
@@ -624,15 +642,111 @@ td.date {
 #regulation{
     margin-top: 200px;
 }
-#subfolder2{
-    margin-top: 200px;
+#regulation_title{
+    margin-left: 30px;
+    font-size: 24px;
+    font-weight: 400;
 }
-#subfolder ul{
-    padding-top: 100px;
+#regulation ul{
+    list-style-type: none;
+}
+#regulation ul li img{
+    padding-top: 10px;
+    padding-bottom: 10px;
+    height: 30px;
+    width: 30px;
+    margin-left: 20px;
+}
+#regulation ul li a{
+    font-weight: 100;
+    font-size: 25px;
+}
+#regulation ul li .folder-wrapper {
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+}
+#regulation ul li .folder-wrapper img {
+    margin-right: 10px;
+}
+.folder-wrapper{
+    height: 60px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-right: 50px;
+    margin-left: 20px;
+    background: linear-gradient(to right, #d1c4e9, #dcedc8, #ffffff);
+}
+
+.folder-wrapper {
+    position: relative;
+}
+
+.arrow-down {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+}
+#file{
+    font-size: 30px;
+    color: dodgerblue;
+    margin-right: 10px;
+}
+.arrow-down {
+    cursor: pointer;
 }
 /*regulation.html ending*/
 
+/*subfolder.html starting*/
+#mainfoldername{
+    margin-left: 30px;
+    font-size: 30px;
+    color: black;
+    font-weight: 100;
+}
+#subfolder{
+    margin-top: 200px;
+}
+#subfolder ul{
+    list-style-type: none;
+    font-weight: 100;
+    font-size: 20px;
+    border-radius: 10px;
+    margin-left: 15px;
+    margin-right: 15px;
+    padding-top: 20px;
+    padding-bottom: 10px;
+}
+#subfolder ul li #sub{
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-right: 50px;
+    margin-left: 20px;
+    margin-bottom: 20px;
+    height: 40px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 50px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    background: radial-gradient(circle at center, #ffffff, #f4f4f4, #e0e0e0, #ffffff), 
+                 linear-gradient(45deg, #6a85b6, #ff9a9e);   
+}
 
+#subfolder ul li img{
+    margin-right: 20px;
+    margin-left: 0px;
+    width: 30px;
+    height: 30px;
+}
+.arrow-down {
+    position: absolute;
+    right: 0; /* Adjust this value to your preference */
+    top: 50%;
+    transform: translateY(-50%);
+}
+/*subfolder.html ending
 /*Contact.html starting*/
 #contact_title {
     text-align: center;
@@ -721,17 +835,16 @@ td.date {
     width: 30px;
     height: 30px;
 }
-
-
 /*contact.html ending*/
 
 
 footer {
-    margin-top: 40px;
+    margin-top: auto;
     background-color: #333;
     color: white;
     padding: 2px;
     text-align: center;
+    
 }
 footer a {
     color: white;
@@ -768,7 +881,4293 @@ footer a {
     border-color: white;
 }
 
-#footer_links a span {
+#footer_links a p {
     font-size: 18px;
     margin-top: 5px; 
 }
+.library-container{
+    margin-top: 200px;
+}
+
+/*for small and medium mobiles*/
+@media only screen and (max-width: 375px) {
+    #college_title {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 40px;
+    }
+    
+    #dept_name {
+        padding-top: 7.5px;
+    }
+    #dept_name1{
+        padding-top: 7.5px;
+    }
+    #college_logo img {
+        width: 20px;
+        float: left;
+        height: 40px;
+    }
+    
+    #department_logo img {
+        width: 20px;
+        float: right;
+        height: 40px;
+    }
+    
+    #college_sub_title {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    #college_sub_title h1{
+        font-size: 6px;
+        margin: 0;
+    }
+    
+    #welcome_scroll {
+        margin-top: 59px;
+        background-color: #e6ebeb;
+        font-size: 6px;
+    }
+    #nav_bar{
+        display: none;
+    }
+    .dropbtn {
+        position: fixed;
+        top:39px;
+        left: 0;
+        z-index: 1000;
+        background-color: grey;
+        color: white;
+        margin-top: 1px;
+        font-size: 10px;
+        border: none;
+      }
+      .dropdown {
+        position: relative;
+        display: inline-block;
+      }
+      .dropbtn:hover{
+        background-color: black;
+      }
+      
+      .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #f1f1f1;
+        min-width: 160px;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        z-index: 1;
+      }
+      
+      .dropdown-content a {
+        color: black;
+        padding: 6px 8px;
+        text-decoration: none;
+        display: block;
+        border-bottom: 1px solid lightgrey;
+      }
+      .dropdown-content a:hover {
+        background:linear-gradient(45deg, #F5F5F5, #FFD700, #FFA07A);
+    }
+      .dropdown:hover .dropdown-content {
+        display: block;
+    }
+      .dropdown:hover .dropbtn {
+        background-color: black
+    }
+    #imageslider{
+        margin-top:2px;
+    }
+    .slider-container {
+        width: 100%;
+        margin: 0 auto;
+        position: relative;
+        height: 350px;
+    }
+    .slider-wrapper {
+        display: flex;
+        transition: transform 0.5s ease-in-out;
+    }
+    .slide {
+        flex: 0 0 100%;
+        height: 350px;
+    }
+    .slide img {
+        width: 100%;
+        height: 350px;
+    }
+    .slider-dots {
+        text-align: center;
+        margin-top: 1px;
+    }
+    .dot {
+        display: inline-block;
+        margin: 0 5px;
+        width: 20px;
+        height: 2px;
+        border-radius: 30px;
+        background-color: #bbb;
+        cursor: pointer;
+    }
+    .dot.active {
+        background-color: #333;
+    }
+    .prev-btn, .next-btn {
+    background-color: none;
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 6px;
+    margin-top: -22px;
+    color: black;
+    font-weight: bold;
+    font-size: 6px;
+    transition: 0.2s ease;
+    border: none;
+    border-radius: 3px;
+    user-select: none;
+    }
+    /* Position the "next button" to the right */
+    .next-btn {
+    right: 0;
+    border-radius: 3px;
+    }
+    /*On hover, add a grey background color */
+    .prev-btn:hover, .next-btn:hover {
+    background-color:black;
+    color: white;
+    }
+    .events {
+        margin-left: 2px;
+        margin-right: 2px;
+        padding-top: 20px;
+        display: flex;
+        margin-bottom: 1px;
+        justify-content: space-between;
+    }
+    .event-column {
+        width: 48%;
+        height: 189px;
+        overflow-y: auto;
+        border: 1px solid #ccc;
+    }
+      table {
+        font-size: 6px;
+        width: 100%;
+        border-collapse: collapse;
+    }
+    
+     th {
+        background-color: black;
+        color: white;
+        padding: 10px;
+        text-align: center;
+        border: 2px solid black;
+        position: sticky;
+        top: 0;
+        z-index: 1;
+    }
+    
+    td {
+        padding: 10px;
+        color: black;
+        padding-bottom: 10px;
+        padding-top: 10px;
+        border: 1px solid black;
+        border-right: 2px solid black;
+        border-left: none;
+    }
+    
+    td.date {
+        background-color: #a60202;
+        color: white;
+        border-right: none;
+        width: 10px;
+        border-left: 2px solid #a60202;
+    }
+    .event-column {
+        overflow: hidden;
+    }
+    #faculty_at_home_page {
+        font-weight: 100;
+        padding-top: 1px;
+        padding-left: 1px;
+        white-space: nowrap;
+        
+    }
+    
+    #faculty_at_home_page h2 {
+        position: relative;
+        display: inline-block;
+        font-size: 8px;
+    }
+    
+    #faculty_at_home_page h2::after {
+        content: "";
+        position: absolute;
+        left: 10px;
+        bottom: -2px;
+        width: 100%;
+        border-bottom: 1px solid black;
+    }
+    
+    #faculty_at_home_page h2::before {
+        content: "";
+        position: absolute;
+        left: 1px;
+        bottom: -3px;
+        width: 50%;
+        border-bottom: 3px solid black;
+    }
+    
+    #faculty_at_home_page_member {
+        text-align: center;
+        display: inline-block;
+        margin-top: 10px;
+        margin-right: 16px; /* Space between the members */
+        vertical-align: top; /* Align the divs at the top */
+        font-size: 6px;
+        margin-left: 2px;
+    }
+    
+    #faculty_at_home_page_member a.faculty_link {
+        display: block;
+        margin-bottom: 10px; /* Space between the image and the text */
+    }
+    
+    #faculty_at_home_page_member img {
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        display: block;
+        border-radius: 50%;
+        width: 100px;
+        height: 100px;
+        margin-bottom: 10px;
+    }
+    
+    #faculty_at_home_page_member span {
+        display: block;
+    }
+    /*about.html*/
+    #imageslider_at_about {
+        margin-top: 60px;
+        margin-bottom: 1px;
+    }
+    
+    #message_from_department {
+        font-size: 8px;
+        padding-left: 5px;
+        width: 96%;
+    }
+    
+    #message {
+        padding-left: 5px;
+    }
+    
+    #msg {
+        font-size: 6px;
+        color: #403e3e;
+    }
+    
+    .accordion {
+        margin-bottom: 4px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+    }
+    .accordion h2{
+        font-size: 8px;
+    }
+    
+    #message_title {
+        font-size: 10px;
+        color: #3a5274;
+        font-weight: bold;
+    }
+    
+    #message img {
+        display: block;
+        margin: 0 auto;
+        margin-top: 2px;
+        width: 100px;
+        height: 100px;
+    }
+    
+
+    .accordion h2 {
+        background-color: #f1f1f1;
+        padding: 5px;
+        margin: 0;
+        cursor: pointer;
+        background: linear-gradient(to right, #74ebd5, #ACB6E5);
+    }
+    
+    .accordion h2:hover {
+        background: linear-gradient(to right, #ACB6E5, #74ebd5);
+    }
+
+    .accordion .content {
+        display: none;
+        padding: 5px;
+    }
+
+    .active {
+        background-color: #ddd;
+    }
+    
+    #course_offered {
+        margin-top: 1px;
+        width: 80%;
+        float: left;
+        margin-left: 5px;
+
+    }
+    
+    #course_offered h2 {
+        color: #3a5274;
+        font-size: 10px;
+    }
+    
+    #course-table {
+        padding-top: 1px;
+        margin-top: 1px;
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 5px;
+    }
+    
+    #course-table th,
+    #course-table td {
+        border: 1px solid #ccc;
+        padding: 10px;
+        text-align: left;
+    }
+    
+    #course-table th {
+        background-color: #3a5274;
+        color: white;
+    }
+    
+    #course-table tr:nth-child(even) {
+        background-color: #f2f2f2;
+    }
+    
+    .clearfix::after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+    #nav-bar-in-about table{
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 10px;
+        border: 1px solid #edede8;
+    }
+    #nav-bar-in-about th{
+        font-size: 6px;
+        background-color: #d1d1cd;
+        border: 1px solid #edede8;
+        color: black;
+        text-decoration: underline;
+    }
+    #nav-bar-in-about th:hover:not(.active){
+        background-color: #faa7a7;
+    }
+    #nav-bar-in-about {
+        margin-top: 1px;
+    }
+    #nav-bar-in-about table th.active{
+        background-color: #faa7a7;
+    }
+    #nav-bar-in-about{
+        width: 100%;
+        border-collapse: collapse;
+    }
+    
+    #nav-bar-in-about th {
+        background-color: #3a5274;
+        color: white;
+        padding: 5px;
+        text-align: center;
+        cursor: pointer;
+    }
+    
+    #content {
+        margin-left: 5px;
+        margin-right: 5px;
+        margin-top: 5px;
+        font-weight: 100;
+        font-size: 6px;
+    }
+    .content-section {
+        font-size: 6px;
+        display: none;
+    }
+    
+    .content-section h2 {
+        font-size: 8px;
+        color: #3a5274;
+    }
+    
+    .content-section p {
+        font-size: 6px;
+        color: #403e3e;
+        line-height: 1.6;
+    }
+    /*faculty.html*/
+    #home {
+        font-family: 'Roboto', sans-serif;
+    }
+    
+    #our_team{
+        margin-top: 80px;
+        position: relative;
+        display: inline-block;
+        font-size: 13px;
+        padding-left: 5px;
+    }
+    
+    #our_team::after {
+        content: "";
+        position: absolute;
+        left: 10px;
+        bottom: -2px;
+        width: 100%;
+        border-bottom: 1px solid black;
+        padding-left: 20px;
+    }
+    
+    #our_team::before {
+        content: "";
+        position: absolute;
+        left: 5px;
+        bottom: -3px;
+        width: 50%;
+        border-bottom: 3px solid black;
+    }
+    
+    .faculty_list > p {
+        margin-top: 1px;
+        margin-bottom: 0px;
+        font-size: 10px;
+    }
+    .member_name {
+        font-size: 15px;
+        margin-bottom: 0px;
+    }
+    .image-container img {
+        width: 100px;
+        height: 100px;
+        margin-bottom: 1px;
+    }
+    
+    .team_members {
+        margin-bottom: 5px;
+    }
+    
+    .container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .contact-info a img {
+        width: 15px;
+        height: 15px;
+        margin-bottom: 5px;
+        margin-top: 0px;
+    }
+    
+    
+    .member {
+        font-weight:300;
+        flex: 1;
+        min-height: 80px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 20px;
+        text-align: center;
+        padding: 10px;
+        width: 200px;
+    }
+    
+    .member img {
+        width: 150px;
+        height: 150px;
+        margin-bottom: 10px;
+    }
+    
+    .member_name {
+        margin-bottom: 10px;
+    }
+    /*facultypage.html*/
+    #faculty_title {
+        margin-top: 80px;
+        padding-left: 5px;
+        font-size: 13px;
+        font-weight: bold;
+    }
+    
+    #faculty_title::after {
+        content: "";
+        position: absolute;
+        left: 20px;
+        bottom: -2px;
+        width: 100%;
+        border-bottom: 1px solid black;
+    }
+    
+    #faculty_title::before {
+        content: "";
+        position: absolute;
+        left: 3px;
+        bottom: -3px;
+        width: 50%;
+        border-bottom: 3px solid black;
+    }
+    #faculty-info h2{
+        font-size: 8px;
+    }
+    #faculty-info li{
+        font-size: 6px;
+    }
+    .name {
+        font-weight: 100;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        margin: 20px;
+        min-width: 70%;
+        text-align: center;
+        margin-bottom: auto;
+        font-size: 10px;
+        margin-bottom: 1px;
+    }
+    #member_name{
+        font-size: 13px;
+        margin-bottom: 1px;
+    }
+    .member_faculty {
+        display: flex;
+        flex-direction: column; 
+        align-items: center;
+    }
+    
+    .description-container {
+        display: flex;
+        flex-direction: column; 
+        align-items: center;
+    }
+    
+    #faculty-info {
+        font-weight: 300;
+        font-size: 8px;
+        margin-right: auto;
+        margin-bottom: 5px; 
+        margin-left: 5px;
+    }
+    
+    .description-container img {
+        padding-top: 1px;
+        width: 100px;
+        height: 100px;
+    }
+    
+    #member_contact img {
+        width: 30px;
+        height: 30px;
+        margin-bottom: 10px;
+    }
+    /*regulation.html*/
+    #regulation{
+        margin-top: 60px;
+    }
+    #regulation > h2{
+        margin-left: 5px;
+    }
+    #regulation ul{
+        list-style-type: none;
+    }
+
+    #regulation ul li img{
+        padding-top: 10px;
+        padding-bottom: 10px;
+        height: 15px;
+        width: 15px;
+        margin-left: 20px;
+    }
+    #regulation ul li a{
+        font-weight: 100;
+        font-size: 10px;
+    }
+    #regulation ul li .folder-wrapper {
+        margin-bottom: 20px;
+        display: flex;
+        align-items: center;
+    }
+    #regulation ul li .folder-wrapper img {
+        margin-right: 10px;
+    }
+    .folder-wrapper{
+        margin-left: 5px;
+        height: 30px;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        background: linear-gradient(to right, #d1c4e9, #dcedc8, #ffffff);
+    }
+    .folder-wrapper {
+        position: relative;
+    }
+    
+    .arrow-down {
+        position: absolute;
+        right: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        cursor: pointer;
+        border-radius: 50%;
+    }
+    /*subfolder.html starting*/
+    #mainfoldername{
+        margin-left: 30px;
+        font-size: 30px;
+        color: black;
+        font-weight: 100;
+    }
+    #subfolder{
+        margin-top: 200px;
+    }
+    #subfolder ul{
+        background: radial-gradient(circle at center, #ffffff, #f4f4f4, #e0e0e0, #ffffff), 
+                    linear-gradient(45deg, #6a85b6, #ff9a9e);
+                    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        list-style-type: none;
+        font-weight: 100;
+        font-size: 20px;
+        border-radius: 10px;
+        margin-left: 15px;
+        margin-right: 15px;
+        padding-top: 20px;
+        padding-bottom: 10px;
+    }
+    #subfolder ul li {
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        margin-right: 50px;
+        margin-left: 20px;
+        background: linear-gradient(to right, #d1c4e9, #dcedc8, #ffffff);
+        margin-bottom: 20px;
+        height: 40px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        padding-left: 50px;
+        border-radius: 10px;
+    }
+    #subfolder ul li img{
+        margin-right: 20px;
+        margin-left: 0px;
+        width: 30px;
+        height: 30px;
+    }
+    #subfolder ul li{
+        display: flex;
+        align-items: center;
+    }
+    /*contact.html*/
+    #contact_title {
+        text-align: center;
+        font-size: 10px;
+    }
+    #contact_us {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 80px;
+        margin-bottom: 5%;
+        width: 95%;
+        height: auto;
+        margin-left: 2%;
+        border-radius: 20px;
+        flex-direction: column;
+        justify-content: space-between;
+        background: radial-gradient(circle at center, #ffffff, #f4f4f4, #e0e0e0, #ffffff), 
+                    linear-gradient(45deg, #6a85b6, #ff9a9e);
+    }
+    
+    #contact_us_academic{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 95%;
+        margin-bottom: 1px;
+        height: auto;
+        border-radius: 20px;
+        flex-direction: column;
+        justify-content: space-between;
+        background: linear-gradient(45deg, #6a85b6, #ff9a9e);
+    }
+    
+    #contact_academic {
+        margin-top: 10px;
+        margin-bottom:10px;
+        font-size: 8px;
+        width: 90%;
+        height: 120px;
+        border-radius: 20px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background-color: white;
+    }
+    
+    #contact_links {
+        display: flex;
+        justify-content: space-between;
+        width: 95%;
+    }
+    
+    #contact_academic p {
+        text-align: center;
+        font-size: 10px;
+        margin-bottom: 0px;
+    }
+    #contact_links_call,
+    #contact_links_email {
+        padding: 2px;
+        padding-left: 3px;
+        padding-right: 3px;
+        display: flex;
+        align-items: center;
+        border-radius: 10px;
+        transition: transform 0.3s ease;
+        background: linear-gradient(to right, #8B5CF6, #A888F3, #C2B1F0);
+    }
+    
+    #contact_links_email:hover {
+        transform: translateY(10px);
+    }
+    
+    #contact_links_call:hover {
+        transform: translateY(10px);
+    }
+    
+    #contact_links_call img,
+    #contact_links_email img {
+        margin-right: 5px;
+        width: 15px;
+        height: 15px;
+    }
+    footer {
+        font-size: 6px;
+        margin-top: auto;
+        background-color: #333;
+        color: white;
+        padding: 2px;
+        text-align: center;
+    }
+    footer h2{
+        font-size: 10px;
+    }
+    footer a {
+        color: white;
+        text-decoration: underline;
+        text-align: center;
+        padding: 1px 0;
+        margin-top: auto;
+        transition: transform 0.3s ease;
+    }
+    #footer_links {
+        display: flex;
+        justify-content: center;
+    }
+    
+    #footer_links a {
+        font-size: 6px;
+        text-decoration: none;
+        color: white;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        transition: transform 0.3s ease;
+    }
+    
+    #footer_links a:hover {
+        transform: translateY(10px);
+    }
+    
+    #footer_links a img {
+        width: 18px;
+        height: 18px; 
+        margin-bottom: 2px; 
+        border-radius: 50%;
+        border-color: white;
+    }
+    #footer_links a p{
+        font-size: 6px;
+    }
+}
+/*for large mobile*/
+@media only screen and (min-width: 376px) and (max-width: 480px) {
+    #college_title {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 50px;
+    }
+    
+    #dept_name {
+        padding-top: 7.5px;
+    }
+    #dept_name1{
+        padding-top: 7.5px;
+    }
+    #college_logo img {
+        width: 30px;
+        float: left;
+        height: 50px;
+    }
+    
+    #department_logo img {
+        width: 30px;
+        float: right;
+        height: 50px;
+    }
+    
+    #college_sub_title {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    #college_sub_title h1{
+        font-size: 9px;
+        margin: 0;
+    }
+    
+    #welcome_scroll {
+        margin-top: 69px;
+        background-color: #e6ebeb;
+        font-size: 6px;
+    }
+    #nav_bar{
+        display: none;
+    }
+    .dropbtn {
+        position: fixed;
+        top:49px;
+        left: 0;
+        z-index: 1000;
+        background-color: grey;
+        color: white;
+        margin-top: 1px;
+        font-size: 10px;
+        border: none;
+      }
+      .dropdown {
+        position: relative;
+        display: inline-block;
+      }
+      .dropbtn:hover{
+        background-color: black;
+      }
+      
+      .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #f1f1f1;
+        min-width: 160px;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        z-index: 1;
+      }
+      
+      .dropdown-content a {
+        color: black;
+        padding: 6px 8px;
+        text-decoration: none;
+        display: block;
+        border-bottom: 1px solid lightgrey;
+      }
+      .dropdown-content a:hover {
+        background:linear-gradient(45deg, #F5F5F5, #FFD700, #FFA07A);
+    }
+      .dropdown:hover .dropdown-content {
+        display: block;
+    }
+      .dropdown:hover .dropbtn {
+        background-color: black
+    }
+    #imageslider{
+        margin-top:2px;
+    }
+    .slider-container {
+        width: 100%;
+        margin: 0 auto;
+        position: relative;
+        height: 350px;
+    }
+    .slider-wrapper {
+        display: flex;
+        transition: transform 0.5s ease-in-out;
+    }
+    .slide {
+        flex: 0 0 100%;
+        height: 350px;
+    }
+    .slide img {
+        width: 100%;
+        height: 350px;
+    }
+    .slider-dots {
+        text-align: center;
+        margin-top: 1px;
+    }
+    .dot {
+        display: inline-block;
+        margin: 0 5px;
+        width: 20px;
+        height: 2px;
+        border-radius: 30px;
+        background-color: #bbb;
+        cursor: pointer;
+    }
+    .dot.active {
+        background-color: #333;
+    }
+    .prev-btn, .next-btn {
+    background-color: none;
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 6px;
+    margin-top: -22px;
+    color: black;
+    font-weight: bold;
+    font-size: 6px;
+    transition: 0.2s ease;
+    border: none;
+    border-radius: 3px;
+    user-select: none;
+    }
+    /* Position the "next button" to the right */
+    .next-btn {
+    right: 0;
+    border-radius: 3px;
+    }
+    /*On hover, add a grey background color */
+    .prev-btn:hover, .next-btn:hover {
+    background-color:black;
+    color: white;
+    }
+    .events {
+        margin-left: 2px;
+        margin-right: 2px;
+        padding-top: 20px;
+        display: flex;
+        margin-bottom: 1px;
+        justify-content: space-between;
+    }
+    .event-column {
+        width: 48%;
+        height: 189px;
+        overflow-y: auto;
+        border: 1px solid #ccc;
+    }
+      table {
+        font-size: 6px;
+        width: 100%;
+        border-collapse: collapse;
+    }
+    
+     th {
+        background-color: black;
+        color: white;
+        padding: 10px;
+        text-align: center;
+        border: 2px solid black;
+        position: sticky;
+        top: 0;
+        z-index: 1;
+    }
+    
+    td {
+        padding: 10px;
+        color: black;
+        padding-bottom: 10px;
+        padding-top: 10px;
+        border: 1px solid black;
+        border-right: 2px solid black;
+        border-left: none;
+    }
+    
+    td.date {
+        background-color: #a60202;
+        color: white;
+        border-right: none;
+        width: 10px;
+        border-left: 2px solid #a60202;
+    }
+    .event-column {
+        overflow: hidden;
+    }
+    #faculty_at_home_page {
+        font-weight: 100;
+        padding-top: 1px;
+        padding-left: 1px;
+        white-space: nowrap;
+        
+    }
+    
+    #faculty_at_home_page h2 {
+        position: relative;
+        display: inline-block;
+        font-size: 10px;
+    }
+    
+    #faculty_at_home_page h2::after {
+        content: "";
+        position: absolute;
+        left: 10px;
+        bottom: -2px;
+        width: 100%;
+        border-bottom: 1px solid black;
+    }
+    
+    #faculty_at_home_page h2::before {
+        content: "";
+        position: absolute;
+        left: 1px;
+        bottom: -3px;
+        width: 50%;
+        border-bottom: 3px solid black;
+    }
+    
+    #faculty_at_home_page_member {
+        text-align: center;
+        display: inline-block;
+        margin-top: 10px;
+        margin-right: 16px; /* Space between the members */
+        vertical-align: top; /* Align the divs at the top */
+        font-size: 6px;
+        margin-left: 2px;
+    }
+    
+    #faculty_at_home_page_member a.faculty_link {
+        display: block;
+        margin-bottom: 10px; /* Space between the image and the text */
+    }
+    
+    #faculty_at_home_page_member img {
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        display: block;
+        border-radius: 50%;
+        width: 100px;
+        height: 100px;
+        margin-bottom: 10px;
+    }
+    
+    #faculty_at_home_page_member span {
+        display: block;
+    }
+    /*about.html*/
+    #imageslider_at_about {
+        margin-top: 70px;
+        margin-bottom: 1px;
+    }
+    
+    #message_from_department {
+        font-size: 8px;
+        padding-left: 5px;
+        width: 96%;
+    }
+    
+    #message {
+        padding-left: 5px;
+    }
+    
+    #msg {
+        font-size: 6px;
+        color: #403e3e;
+    }
+    
+    .accordion {
+        margin-bottom: 4px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+    }
+    .accordion h2{
+        font-size: 8px;
+    }
+    
+    #message_title {
+        font-size: 10px;
+        color: #3a5274;
+        font-weight: bold;
+    }
+    
+    #message img {
+        display: block;
+        margin: 0 auto;
+        margin-top: 2px;
+        width: 100px;
+        height: 100px;
+    }
+    
+
+    .accordion h2 {
+        background-color: #f1f1f1;
+        padding: 5px;
+        margin: 0;
+        cursor: pointer;
+        background: linear-gradient(to right, #74ebd5, #ACB6E5);
+    }
+    
+    .accordion h2:hover {
+        background: linear-gradient(to right, #ACB6E5, #74ebd5);
+    }
+
+    .accordion .content {
+        display: none;
+        padding: 5px;
+    }
+
+    .active {
+        background-color: #ddd;
+    }
+    
+    #course_offered {
+        margin-top: 1px;
+        width: 80%;
+        float: left;
+        margin-left: 5px;
+
+    }
+    
+    #course_offered h2 {
+        color: #3a5274;
+        font-size: 10px;
+    }
+    
+    #course-table {
+        padding-top: 1px;
+        margin-top: 1px;
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 30px;
+    }
+    
+    #course-table th,
+    #course-table td {
+        border: 1px solid #ccc;
+        padding: 10px;
+        text-align: left;
+    }
+    
+    #course-table th {
+        background-color: #3a5274;
+        color: white;
+    }
+    
+    #course-table tr:nth-child(even) {
+        background-color: #f2f2f2;
+    }
+    
+    .clearfix::after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+    #nav-bar-in-about table{
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 10px;
+        border: 1px solid #edede8;
+    }
+    #nav-bar-in-about th{
+        font-size: 6px;
+        background-color: #d1d1cd;
+        border: 1px solid #edede8;
+        color: black;
+        text-decoration: underline;
+    }
+    #nav-bar-in-about th:hover:not(.active){
+        background-color: #faa7a7;
+    }
+    #nav-bar-in-about {
+        margin-top: 1px;
+    }
+    #nav-bar-in-about table th.active{
+        background-color: #faa7a7;
+    }
+    #nav-bar-in-about{
+        width: 100%;
+        border-collapse: collapse;
+    }
+    
+    #nav-bar-in-about th {
+        background-color: #3a5274;
+        color: white;
+        padding: 5px;
+        text-align: center;
+        cursor: pointer;
+    }
+    
+    #content {
+        margin-left: 5px;
+        margin-right: 5px;
+        margin-top: 5px;
+        font-weight: 100;
+        font-size: 6px;
+    }
+    .content-section {
+        font-size: 6px;
+        display: none;
+    }
+    
+    .content-section h2 {
+        font-size: 8px;
+        color: #3a5274;
+    }
+    
+    .content-section p {
+        font-size: 6px;
+        color: #403e3e;
+        line-height: 1.6;
+    }
+    /*faculty.html*/
+    #home {
+        font-family: 'Roboto', sans-serif;
+    }
+    
+    #our_team{
+        margin-top: 90px;
+        position: relative;
+        display: inline-block;
+        font-size: 13px;
+        padding-left: 5px;
+    }
+    
+    #our_team::after {
+        content: "";
+        position: absolute;
+        left: 10px;
+        bottom: -2px;
+        width: 100%;
+        border-bottom: 1px solid black;
+        padding-left: 20px;
+    }
+    
+    #our_team::before {
+        content: "";
+        position: absolute;
+        left: 5px;
+        bottom: -3px;
+        width: 50%;
+        border-bottom: 3px solid black;
+    }
+    
+    .faculty_list > p {
+        margin-top: 1px;
+        margin-bottom: 0px;
+        font-size: 12px;
+    }
+    .member_name {
+        font-size: 17px;
+        margin-bottom: 0px;
+    }
+    .image-container img {
+        width: 120px;
+        height: 120px;
+        margin-bottom: 1px;
+    }
+    
+    .team_members {
+        margin-bottom: 5px;
+    }
+    
+    .container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .contact-info a img {
+        width: 15px;
+        height: 15px;
+        margin-bottom: 5px;
+        margin-top: 0px;
+    }
+    
+    
+    .member {
+        font-weight:300;
+        flex: 1;
+        min-height: 80px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 20px;
+        text-align: center;
+        padding: 10px;
+        width: 280px;
+    }
+    
+    .member img {
+        width: 150px;
+        height: 150px;
+        margin-bottom: 10px;
+    }
+    
+    .member_name {
+        margin-bottom: 10px;
+    }
+    /*facultypage.html*/
+    #faculty_title {
+        margin-top: 80px;
+        padding-left: 5px;
+        font-size: 13px;
+        font-weight: bold;
+    }
+    
+    #faculty_title::after {
+        content: "";
+        position: absolute;
+        left: 20px;
+        bottom: -2px;
+        width: 100%;
+        border-bottom: 1px solid black;
+    }
+    
+    #faculty_title::before {
+        content: "";
+        position: absolute;
+        left: 3px;
+        bottom: -3px;
+        width: 50%;
+        border-bottom: 3px solid black;
+    }
+    #faculty-info h2{
+        font-size: 8px;
+    }
+    #faculty-info li{
+        font-size: 6px;
+    }
+    .name {
+        font-weight: 100;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        margin: 20px;
+        min-width: 70%;
+        text-align: center;
+        margin-bottom: auto;
+        font-size: 10px;
+        margin-bottom: 1px;
+    }
+    #member_name{
+        font-size: 13px;
+        margin-bottom: 1px;
+    }
+    .member_faculty {
+        display: flex;
+        flex-direction: column; 
+        align-items: center;
+    }
+    
+    .description-container {
+        display: flex;
+        flex-direction: column; 
+        align-items: center;
+    }
+    
+    #faculty-info {
+        font-weight: 300;
+        font-size: 8px;
+        margin-right: auto;
+        margin-bottom: 5px; 
+        margin-left: 5px;
+    }
+    
+    .description-container img {
+        padding-top: 1px;
+        width: 120px;
+        height: 120px;
+    }
+    
+    #member_contact img {
+        width: 30px;
+        height: 30px;
+        margin-bottom: 10px;
+    }
+    /*contact.html*/
+    #contact_title {
+        text-align: center;
+        font-size: 10px;
+    }
+    #contact_us {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 80px;
+        margin-bottom: 5%;
+        width: 95%;
+        height: auto;
+        margin-left: 2%;
+        border-radius: 20px;
+        flex-direction: column;
+        justify-content: space-between;
+        background: radial-gradient(circle at center, #ffffff, #f4f4f4, #e0e0e0, #ffffff), 
+                    linear-gradient(45deg, #6a85b6, #ff9a9e);
+    }
+    
+    #contact_us_academic{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 95%;
+        margin-bottom: 1px;
+        height: auto;
+        border-radius: 20px;
+        flex-direction: column;
+        justify-content: space-between;
+        background: linear-gradient(45deg, #6a85b6, #ff9a9e);
+    }
+    
+    #contact_academic {
+        margin-top: 10px;
+        margin-bottom:10px;
+        font-size: 8px;
+        width: 90%;
+        height: 120px;
+        border-radius: 20px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background-color: white;
+    }
+    
+    #contact_links {
+        display: flex;
+        justify-content: space-between;
+        width: 95%;
+    }
+    
+    #contact_academic p {
+        text-align: center;
+        font-size: 10px;
+        margin-bottom: 0px;
+    }
+    #contact_links_call,
+    #contact_links_email {
+        padding: 2px;
+        padding-left: 3px;
+        padding-right: 3px;
+        display: flex;
+        align-items: center;
+        border-radius: 10px;
+        transition: transform 0.3s ease;
+        background: linear-gradient(to right, #8B5CF6, #A888F3, #C2B1F0);
+    }
+    
+    #contact_links_email:hover {
+        transform: translateY(10px);
+    }
+    
+    #contact_links_call:hover {
+        transform: translateY(10px);
+    }
+    
+    #contact_links_call img,
+    #contact_links_email img {
+        margin-right: 5px;
+        width: 15px;
+        height: 15px;
+    }
+    footer {
+        font-size: 6px;
+        margin-top: 1px;
+        background-color: #333;
+        color: white;
+        padding: 2px;
+        text-align: center;
+    }
+    footer h2{
+        font-size: 10px;
+    }
+    footer a {
+        color: white;
+        text-decoration: underline;
+        text-align: center;
+        padding: 1px 0;
+        margin-top: auto;
+        transition: transform 0.3s ease;
+    }
+    #footer_links {
+        display: flex;
+        justify-content: center;
+    }
+    
+    #footer_links a {
+        font-size: 6px;
+        text-decoration: none;
+        color: white;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        transition: transform 0.3s ease;
+    }
+    
+    #footer_links a:hover {
+        transform: translateY(10px);
+    }
+    
+    #footer_links a img {
+        width: 18px;
+        height: 18px; 
+        margin-bottom: 2px; 
+        border-radius: 50%;
+        border-color: white;
+    }
+    #footer_links a p{
+        font-size: 6px;
+    }
+
+}
+/*for tablets*/
+@media only screen and (min-width: 481px) and (max-width: 768px) {
+    #college_title {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 85px;
+    }
+    
+    #dept_name {
+        padding-top: 7.5px;
+    }
+    #dept_name1{
+        padding-top: 7.5px;
+    }
+    #college_logo img {
+        width: 40px;
+        float: left;
+        height: 60px;
+    }
+    
+    #department_logo img {
+        width: 40px;
+        float: right;
+        height: 60px;
+    }
+    
+    #college_sub_title {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    #college_sub_title h1{
+        font-size: 11px;
+        margin: 0;
+    }
+    
+    #welcome_scroll {
+        margin-top: 115px;
+        background-color: #e6ebeb;
+        font-size: 10px;
+    }
+    #nav_bar{
+        display: none;
+    }
+    .dropbtn {
+        position: fixed;
+        top:84px;
+        left: 0;
+        z-index: 1000;
+        background-color: grey;
+        color: white;
+        margin-top: 1px;
+        font-size: 10px;
+        border: none;
+        width: 25px;
+        height: 25px;
+      }
+      .dropdown {
+        position: relative;
+        display: inline-block;
+      }
+      .dropbtn:hover{
+        background-color: black;
+      }
+      
+      .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #f1f1f1;
+        margin-top: 12px;
+        min-width: 160px;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        z-index: 1;
+      }
+      
+      .dropdown-content a {
+        color: black;
+        padding: 6px 8px;
+        text-decoration: none;
+        display: block;
+        border-bottom: 1px solid lightgrey;
+      }
+      .dropdown-content a:hover {
+        background:linear-gradient(45deg, #F5F5F5, #FFD700, #FFA07A);
+    }
+      .dropdown:hover .dropdown-content {
+        display: block;
+    }
+      .dropdown:hover .dropbtn {
+        background-color: black
+    }
+    #imageslider{
+        margin-top:2px;
+    }
+    .slider-container {
+        width: 100%;
+        margin: 0 auto;
+        position: relative;
+        height: 500px;
+    }
+    .slider-wrapper {
+        display: flex;
+        transition: transform 0.5s ease-in-out;
+    }
+    .slide {
+        flex: 0 0 100%;
+        height: 500px;
+    }
+    .slide img {
+        width: 100%;
+        height: 500px;
+    }
+    .slider-dots {
+        text-align: center;
+        margin-top: 1px;
+    }
+    .dot {
+        display: inline-block;
+        margin: 0 5px;
+        width: 20px;
+        height: 2px;
+        border-radius: 30px;
+        background-color: #bbb;
+        cursor: pointer;
+    }
+    .dot.active {
+        background-color: #333;
+    }
+    .prev-btn, .next-btn {
+    background-color: none;
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 10px;
+    margin-top: -22px;
+    color: black;
+    font-weight: bold;
+    font-size: 6px;
+    transition: 0.2s ease;
+    border: none;
+    border-radius: 3px;
+    user-select: none;
+    }
+    /* Position the "next button" to the right */
+    .next-btn {
+    right: 0;
+    border-radius: 3px;
+    }
+    /*On hover, add a grey background color */
+    .prev-btn:hover, .next-btn:hover {
+    background-color:black;
+    color: white;
+    }
+    .events {
+        margin-left: 2px;
+        margin-right: 2px;
+        padding-top: 20px;
+        display: flex;
+        margin-bottom: 1px;
+        justify-content: space-between;
+    }
+    .event-column {
+        width: 48%;
+        height: 214px;
+        overflow-y: auto;
+        border: 1px solid #ccc;
+    }
+      table {
+        font-size: 8px;
+        width: 100%;
+        border-collapse: collapse;
+    }
+    
+     th {
+        background-color: black;
+        color: white;
+        padding: 10px;
+        text-align: center;
+        border: 2px solid black;
+        position: sticky;
+        top: 0;
+        z-index: 1;
+    }
+    
+    td {
+        padding: 10px;
+        color: black;
+        padding-bottom: 10px;
+        padding-top: 10px;
+        border: 1px solid black;
+        border-right: 2px solid black;
+        border-left: none;
+    }
+    
+    td.date {
+        background-color: #a60202;
+        color: white;
+        border-right: none;
+        width: 10px;
+        border-left: 2px solid #a60202;
+    }
+    .event-column {
+        overflow: hidden;
+    }
+    #faculty_at_home_page {
+        font-weight: 100;
+        padding-top: 1px;
+        padding-left: 1px;
+        white-space: nowrap;
+        
+    }
+    
+    #faculty_at_home_page h2 {
+        position: relative;
+        display: inline-block;
+        font-size: 12px;
+    }
+    
+    #faculty_at_home_page h2::after {
+        content: "";
+        position: absolute;
+        left: 10px;
+        bottom: -2px;
+        width: 100%;
+        border-bottom: 1px solid black;
+    }
+    
+    #faculty_at_home_page h2::before {
+        content: "";
+        position: absolute;
+        left: 1px;
+        bottom: -3px;
+        width: 50%;
+        border-bottom: 3px solid black;
+    }
+    
+    #faculty_at_home_page_member {
+        text-align: center;
+        display: inline-block;
+        margin-top: 10px;
+        margin-right: 16px; /* Space between the members */
+        vertical-align: top; /* Align the divs at the top */
+        font-size: 10px;
+        margin-left: 2px;
+    }
+    
+    #faculty_at_home_page_member a.faculty_link {
+        display: block;
+        margin-bottom: 10px; /* Space between the image and the text */
+    }
+    
+    #faculty_at_home_page_member img {
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        display: block;
+        border-radius: 50%;
+        width: 120px;
+        height: 120px;
+        margin-bottom: 10px;
+    }
+    
+    #faculty_at_home_page_member span {
+        display: block;
+    }
+    /*about.html*/
+    #imageslider_at_about {
+        margin-top: 120px;
+        margin-bottom: 1px;
+    }
+    
+    #message_from_department {
+        font-size: 10px;
+        padding-left: 5px;
+        width: 98%;
+    }
+    
+    #message {
+        padding-left: 5px;
+    }
+    
+    #msg {
+        font-size: 10px;
+        color: #403e3e;
+    }
+    
+    .accordion {
+        margin-bottom: 4px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+    }
+    .accordion h2{
+        font-size: 10px;
+    }
+    
+    #message_title {
+        font-size: 12px;
+        color: #3a5274;
+        font-weight: bold;
+    }
+    
+    #message img {
+        display: block;
+        margin: 0 auto;
+        margin-top: 2px;
+        width: 100px;
+        height: 100px;
+    }
+    
+
+    .accordion h2 {
+        background-color: #f1f1f1;
+        padding: 5px;
+        margin: 0;
+        cursor: pointer;
+        background: linear-gradient(to right, #74ebd5, #ACB6E5);
+    }
+    
+    .accordion h2:hover {
+        background: linear-gradient(to right, #ACB6E5, #74ebd5);
+    }
+
+    .accordion .content {
+        display: none;
+        padding: 5px;
+    }
+
+    .active {
+        background-color: #ddd;
+    }
+    
+    #course_offered {
+        margin-top: 1px;
+        width: 80%;
+        float: left;
+        margin-left: 5px;
+
+    }
+    
+    #course_offered h2 {
+        color: #3a5274;
+        font-size: 10px;
+    }
+    
+    #course-table {
+        padding-top: 1px;
+        margin-top: 1px;
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 10px;
+    }
+    
+    #course-table th,
+    #course-table td {
+        border: 1px solid #ccc;
+        padding: 10px;
+        text-align: left;
+    }
+    
+    #course-table th {
+        background-color: #3a5274;
+        color: white;
+    }
+    
+    #course-table tr:nth-child(even) {
+        background-color: #f2f2f2;
+    }
+    
+    .clearfix::after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+    #nav-bar-in-about table{
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 10px;
+        border: 1px solid #edede8;
+    }
+    #nav-bar-in-about th{
+        font-size: 8px;
+        background-color: #d1d1cd;
+        border: 1px solid #edede8;
+        color: black;
+        text-decoration: underline;
+    }
+    #nav-bar-in-about th:hover:not(.active){
+        background-color: #faa7a7;
+    }
+    #nav-bar-in-about {
+        margin-top: 1px;
+    }
+    #nav-bar-in-about table th.active{
+        background-color: #faa7a7;
+    }
+    #nav-bar-in-about{
+        width: 100%;
+        border-collapse: collapse;
+    }
+    
+    #nav-bar-in-about th {
+        background-color: #3a5274;
+        color: white;
+        padding: 5px;
+        text-align: center;
+        cursor: pointer;
+    }
+    
+    #content {
+        margin-left: 5px;
+        margin-right: 5px;
+        margin-top: 5px;
+        font-weight: 100;
+        font-size: 8px;
+    }
+    .content-section {
+        font-size: 8px;
+        display: none;
+    }
+    
+    .content-section h2 {
+        font-size: 10px;
+        color: #3a5274;
+    }
+    
+    .content-section p {
+        font-size: 8px;
+        color: #403e3e;
+        line-height: 1.6;
+    }
+    /*faculty.html*/
+    #home {
+        font-family: 'Roboto', sans-serif;
+    }
+    
+    #our_team{
+        margin-top: 120px;
+        position: relative;
+        display: inline-block;
+        font-size: 13px;
+        padding-left: 5px;
+    }
+    
+    #our_team::after {
+        content: "";
+        position: absolute;
+        left: 10px;
+        bottom: -2px;
+        width: 100%;
+        border-bottom: 1px solid black;
+        padding-left: 20px;
+    }
+    
+    #our_team::before {
+        content: "";
+        position: absolute;
+        left: 5px;
+        bottom: -3px;
+        width: 50%;
+        border-bottom: 3px solid black;
+    }
+    
+    .faculty_list > p {
+        margin-top: 1px;
+        margin-bottom: 0px;
+        font-size: 13px;
+    }
+    .member_name {
+        font-size: 18px;
+        margin-bottom: 0px;
+    }
+    .image-container img {
+        width: 120px;
+        height: 120px;
+        margin-bottom: 1px;
+    }
+    
+    .team_members {
+        margin-bottom: 5px;
+    }
+    
+    .container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .contact-info a img {
+        width: 20px;
+        height: 20px;
+        margin-bottom: 5px;
+        margin-top: 5px;
+    }
+    
+    
+    .member {
+        font-weight:300;
+        flex: 1;
+        min-height: 250px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 20px;
+        text-align: center;
+        padding: 10px;
+        width: 300px
+    }
+    
+    .member img {
+        width: 150px;
+        height: 150px;
+        margin-bottom: 10px;
+    }
+    
+    .member_name {
+        margin-bottom: 10px;
+    }
+
+    /*facultypage.html*/
+    #faculty_title {
+        margin-top: 120px;
+        padding-left: 5px;
+        font-size: 13px;
+        font-weight: bold;
+    }
+    
+    #faculty_title::after {
+        content: "";
+        position: absolute;
+        left: 20px;
+        bottom: -2px;
+        width: 100%;
+        border-bottom: 1px solid black;
+    }
+    
+    #faculty_title::before {
+        content: "";
+        position: absolute;
+        left: 3px;
+        bottom: -3px;
+        width: 50%;
+        border-bottom: 3px solid black;
+    }
+    #faculty-info h2{
+        font-size: 12px;
+    }
+    #faculty-info li{
+        font-size: 10px;
+    }
+    .name {
+        font-weight: 100;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        margin: 20px;
+        min-width: 50%;
+        text-align: center;
+        margin-bottom: auto;
+        font-size: 13px;
+        margin-bottom: 1px;
+    }
+    #member_name{
+        font-size: 18px;
+        margin-bottom: 1px;
+    }
+    .member_faculty {
+        display: flex;
+        flex-direction: column; 
+        align-items: center;
+    }
+    
+    .description-container {
+        display: flex;
+        flex-direction: column; 
+        align-items: center;
+    }
+    
+    #faculty-info {
+        margin-top: 10px;
+        font-weight: 300;
+        font-size: 12px;
+        margin-right: auto;
+        margin-bottom: 5px; 
+        margin-left: 10px;
+    }
+    
+    .description-container img {
+        padding-top: 1px;
+        width: 120px;
+        height: 120px;
+    }
+    
+    #member_contact img {
+        width: 30px;
+        height: 30px;
+        margin-bottom: 10px;
+    }
+    /*contact.html*/
+    #contact_title {
+        text-align: center;
+        font-size: 14px;
+    }
+    #contact_us {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 120px;
+        margin-bottom: 5%;
+        width: 95%;
+        height: auto;
+        margin-left: 2%;
+        border-radius: 20px;
+        flex-direction: column;
+        justify-content: space-between;
+        background: radial-gradient(circle at center, #ffffff, #f4f4f4, #e0e0e0, #ffffff), 
+                    linear-gradient(45deg, #6a85b6, #ff9a9e);
+    }
+    
+    #contact_us_academic{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 95%;
+        margin-bottom: 5px;
+        height: auto;
+        border-radius: 20px;
+        flex-direction: column;
+        justify-content: space-between;
+        background: linear-gradient(45deg, #6a85b6, #ff9a9e);
+    }
+    
+    #contact_academic {
+        margin-top: 20px;
+        margin-bottom:20px;
+        font-size: 12px;
+        width: 90%;
+        height: 160px;
+        border-radius: 20px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background-color: white;
+    }
+    
+    #contact_links {
+        display: flex;
+        justify-content: space-between;
+        width: 95%;
+    }
+    
+    #contact_academic p {
+        text-align: center;
+        font-size: 14px;
+        margin-bottom: 0px;
+    }
+    #contact_links_call,
+    #contact_links_email {
+        padding: 2px;
+        padding-left: 3px;
+        padding-right: 3px;
+        display: flex;
+        align-items: center;
+        border-radius: 5px;
+        transition: transform 0.3s ease;
+        background: linear-gradient(to right, #8B5CF6, #A888F3, #C2B1F0);
+    }
+    
+    #contact_links_email:hover {
+        transform: translateY(10px);
+    }
+    
+    #contact_links_call:hover {
+        transform: translateY(10px);
+    }
+    
+    #contact_links_call img,
+    #contact_links_email img {
+        margin-right: 5px;
+        width: 15px;
+        height: 15px;
+    }
+    footer {
+        font-size: 10px;
+        margin-top: 1px;
+        background-color: #333;
+        color: white;
+        padding: 2px;
+        text-align: center;
+    }
+    footer h2{
+        font-size: 12px;
+    }
+    footer a {
+        color: white;
+        text-decoration: underline;
+        text-align: center;
+        padding: 1px 0;
+        margin-top: auto;
+        transition: transform 0.3s ease;
+    }
+    #footer_links {
+        display: flex;
+        justify-content: center;
+    }
+    
+    #footer_links a {
+        font-size: 10px;
+        text-decoration: none;
+        color: white;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        transition: transform 0.3s ease;
+    }
+    
+    #footer_links a:hover {
+        transform: translateY(10px);
+    }
+    
+    #footer_links a img {
+        width: 25px;
+        height: 25px; 
+        margin-bottom: 2px; 
+        border-radius: 50%;
+        border-color: white;
+    }
+    #footer_links a p{
+        font-size: 10px;
+    }
+
+}
+
+@media only screen and (min-width: 769px) and (max-width: 979px) {
+    #college_title {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 85px;
+    }
+    
+    #dept_name {
+        padding-top: 7.5px;
+    }
+    #dept_name1{
+        padding-top: 7.5px;
+    }
+    #college_logo img {
+        width: 50px;
+        float: left;
+        height: 70px;
+    }
+    
+    #department_logo img {
+        width: 50px;
+        float: right;
+        height: 70px;
+    }
+    
+    #college_sub_title {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    #college_sub_title h1{
+        font-size: 19px;
+        margin: 0;
+    }
+    
+    #welcome_scroll {
+        margin-top: 120px;
+        background-color: #e6ebeb;
+        font-size: 10px;
+    }
+    #nav_bar{
+        display: none;
+    }
+    .dropbtn {
+        position: fixed;
+        top:84px;
+        left: 0;
+        z-index: 1000;
+        background-color: grey;
+        color: white;
+        margin-top: 1px;
+        font-size: 10px;
+        border: none;
+        width: 30px;
+        height: 30px;
+      }
+      .dropdown {
+        position: relative;
+        display: inline-block;
+      }
+      .dropbtn:hover{
+        background-color: black;
+      }
+      
+      .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #f1f1f1;
+        min-width: 160px;
+        margin-top: 15px;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        z-index: 1;
+      }
+      
+      .dropdown-content a {
+        color: black;
+        padding: 6px 8px;
+        text-decoration: none;
+        display: block;
+        border-bottom: 1px solid lightgrey;
+      }
+      .dropdown-content a:hover {
+        background:linear-gradient(45deg, #F5F5F5, #FFD700, #FFA07A);
+    }
+      .dropdown:hover .dropdown-content {
+        display: block;
+    }
+      .dropdown:hover .dropbtn {
+        background-color: black
+    }
+    #imageslider{
+        margin-top:2px;
+    }
+    .slider-container {
+        width: 100%;
+        margin: 0 auto;
+        position: relative;
+        height: 550px;
+    }
+    .slider-wrapper {
+        display: flex;
+        transition: transform 0.5s ease-in-out;
+    }
+    .slide {
+        flex: 0 0 100%;
+        height: 550px;
+    }
+    .slide img {
+        width: 100%;
+        height: 550px;
+    }
+    .slider-dots {
+        text-align: center;
+        margin-top: 1px;
+    }
+    .dot {
+        display: inline-block;
+        margin: 0 5px;
+        width: 20px;
+        height: 2px;
+        border-radius: 30px;
+        background-color: #bbb;
+        cursor: pointer;
+    }
+    .dot.active {
+        background-color: #333;
+    }
+    .prev-btn, .next-btn {
+    background-color: none;
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 15px;
+    margin-top: -22px;
+    color: black;
+    font-weight: bold;
+    font-size: 10px;
+    transition: 0.2s ease;
+    border: none;
+    border-radius: 3px;
+    user-select: none;
+    }
+    /* Position the "next button" to the right */
+    .next-btn {
+    right: 0;
+    border-radius: 3px;
+    }
+    /*On hover, add a grey background color */
+    .prev-btn:hover, .next-btn:hover {
+    background-color:black;
+    color: white;
+    }
+    .events {
+        margin-left: 2px;
+        margin-right: 2px;
+        padding-top: 20px;
+        display: flex;
+        margin-bottom: 1px;
+        justify-content: space-between;
+    }
+    .event-column {
+        width: 48%;
+        height: 242px;
+        overflow-y: auto;
+        border: 1px solid #ccc;
+    }
+      table {
+        font-size: 10px;
+        width: 100%;
+        border-collapse: collapse;
+    }
+    
+     th {
+        background-color: black;
+        color: white;
+        padding: 10px;
+        text-align: center;
+        border: 2px solid black;
+        position: sticky;
+        top: 0;
+        z-index: 1;
+    }
+    
+    td {
+        padding: 10px;
+        color: black;
+        padding-bottom: 10px;
+        padding-top: 10px;
+        border: 1px solid black;
+        border-right: 2px solid black;
+        border-left: none;
+    }
+    
+    td.date {
+        background-color: #a60202;
+        color: white;
+        border-right: none;
+        width: 10px;
+        border-left: 2px solid #a60202;
+    }
+    .event-column {
+        overflow: hidden;
+    }
+    #faculty_at_home_page {
+        font-weight: 100;
+        padding-top: 1px;
+        padding-left: 1px;
+        white-space: nowrap;
+        
+    }
+    
+    #faculty_at_home_page h2 {
+        position: relative;
+        display: inline-block;
+        font-size: 15px;
+    }
+    
+    #faculty_at_home_page h2::after {
+        content: "";
+        position: absolute;
+        left: 10px;
+        bottom: -2px;
+        width: 100%;
+        border-bottom: 1px solid black;
+    }
+    
+    #faculty_at_home_page h2::before {
+        content: "";
+        position: absolute;
+        left: 1px;
+        bottom: -3px;
+        width: 50%;
+        border-bottom: 3px solid black;
+    }
+    
+    #faculty_at_home_page_member {
+        text-align: center;
+        display: inline-block;
+        margin-top: 10px;
+        margin-right: 16px; 
+        vertical-align: top; 
+        font-size: 12px;
+        margin-left: 2px;
+    }
+    
+    #faculty_at_home_page_member a.faculty_link {
+        display: block;
+        margin-bottom: 10px; 
+    }
+    
+    #faculty_at_home_page_member img {
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        display: block;
+        border-radius: 50%;
+        width: 130px;
+        height: 130px;
+        margin-bottom: 10px;
+    }
+    
+    #faculty_at_home_page_member span {
+        display: block;
+    }
+    /*about.html*/
+    #imageslider_at_about {
+        margin-top: 120px;
+        margin-bottom: 1px;
+    }
+    
+    #message_from_department {
+        font-size: 15px;
+        padding-left: 5px;
+        width: 98%;
+    }
+    
+    #message {
+        padding-left: 5px;
+        font-size: 10px;
+    }
+    
+    #msg {
+        font-size: 12px;
+        color: #403e3e;
+    }
+    
+    .accordion {
+        margin-bottom: 4px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+    }
+    .accordion h2{
+        font-size: 12px;
+    }
+    
+    #message_title {
+        font-size: 14px;
+        color: #3a5274;
+        font-weight: bold;
+    }
+    
+    #message img {
+        display: block;
+        margin: 0 auto;
+        margin-top: 2px;
+        width: 150px;
+        height: 150px;
+    }
+    
+
+    .accordion h2 {
+        background-color: #f1f1f1;
+        padding: 5px;
+        margin: 0;
+        cursor: pointer;
+        background: linear-gradient(to right, #74ebd5, #ACB6E5);
+    }
+    
+    .accordion h2:hover {
+        background: linear-gradient(to right, #ACB6E5, #74ebd5);
+    }
+
+    .accordion .content {
+        display: none;
+        padding: 5px;
+    }
+
+    .active {
+        background-color: #ddd;
+    }
+    
+    #course_offered {
+        margin-top: 1px;
+        width: 80%;
+        float: left;
+        margin-left: 5px;
+
+    }
+    
+    #course_offered h2 {
+        color: #3a5274;
+        font-size: 12px;
+    }
+    
+    #course-table {
+        padding-top: 1px;
+        margin-top: 1px;
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 10px;
+    }
+    
+    #course-table th,
+    #course-table td {
+        border: 1px solid #ccc;
+        padding: 12px;
+        text-align: left;
+    }
+    
+    #course-table th {
+        background-color: #3a5274;
+        color: white;
+    }
+    
+    #course-table tr:nth-child(even) {
+        background-color: #f2f2f2;
+    }
+    
+    .clearfix::after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+    #nav-bar-in-about table{
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 10px;
+        border: 1px solid #edede8;
+    }
+    #nav-bar-in-about th{
+        font-size: 10px;
+        background-color: #d1d1cd;
+        border: 1px solid #edede8;
+        color: black;
+        text-decoration: underline;
+    }
+    #nav-bar-in-about th:hover:not(.active){
+        background-color: #faa7a7;
+    }
+    #nav-bar-in-about {
+        margin-top: 1px;
+    }
+    #nav-bar-in-about table th.active{
+        background-color: #faa7a7;
+    }
+    #nav-bar-in-about{
+        width: 100%;
+        border-collapse: collapse;
+    }
+    
+    #nav-bar-in-about th {
+        background-color: #3a5274;
+        color: white;
+        padding: 5px;
+        text-align: center;
+        cursor: pointer;
+    }
+    
+    #content {
+        margin-left: 5px;
+        margin-right: 5px;
+        margin-top: 5px;
+        font-weight: 100;
+        font-size: 8px;
+    }
+    .content-section {
+        font-size: 12px;
+        display: none;
+    }
+    
+    .content-section h2 {
+        font-size: 12px;
+        color: #3a5274;
+    }
+    
+    .content-section p {
+        font-size: 12px;
+        color: #403e3e;
+        line-height: 1.6;
+    }
+    /*faculty.html*/
+    #home {
+        font-family: 'Roboto', sans-serif;
+    }
+    
+    #our_team{
+        margin-top: 120px;
+        position: relative;
+        display: inline-block;
+        font-size: 15px;
+        padding-left: 5px;
+    }
+    
+    #our_team::after {
+        content: "";
+        position: absolute;
+        left: 10px;
+        bottom: -2px;
+        width: 100%;
+        border-bottom: 1px solid black;
+        padding-left: 20px;
+    }
+    
+    #our_team::before {
+        content: "";
+        position: absolute;
+        left: 5px;
+        bottom: -3px;
+        width: 50%;
+        border-bottom: 3px solid black;
+    }
+    
+    .faculty_list > p {
+        margin-top: 1px;
+        margin-bottom: 0px;
+        font-size: 15px;
+    }
+    .member_name {
+        font-size: 20px;
+        margin-bottom: 0px;
+    }
+    .image-container img {
+        width: 120px;
+        height: 120px;
+        margin-bottom: 1px;
+    }
+    
+    .team_members {
+        margin-bottom: 5px;
+    }
+    
+    .container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .contact-info a img {
+        width: 20px;
+        height: 20px;
+        margin-bottom: 5px;
+        margin-top: 5px;
+    }
+    
+    
+    .member {
+        font-weight:300;
+        flex: 1;
+        min-height: 250px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 20px;
+        text-align: center;
+        padding: 10px;
+        width: 300px
+    }
+    
+    .member img {
+        width: 150px;
+        height: 150px;
+        margin-bottom: 10px;
+    }
+    
+    .member_name {
+        margin-bottom: 10px;
+    }
+
+    /*facultypage.html*/
+    #faculty_title {
+        margin-top: 120px;
+        padding-left: 5px;
+        font-size: 18px;
+        font-weight: bold;
+    }
+    
+    #faculty_title::after {
+        content: "";
+        position: absolute;
+        left: 20px;
+        bottom: -2px;
+        width: 100%;
+        border-bottom: 1px solid black;
+    }
+    
+    #faculty_title::before {
+        content: "";
+        position: absolute;
+        left: 3px;
+        bottom: -3px;
+        width: 50%;
+        border-bottom: 3px solid black;
+    }
+    .name {
+        font-weight: 100;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        margin: 20px;
+        min-width: 40%;
+        text-align: center;
+        margin-bottom: auto;
+        font-size: 15px;
+        margin-bottom: 1px;
+    }
+    #faculty-info h2{
+        font-size: 12px;
+    }
+    #faculty-info li{
+        font-size: 10px;
+    }
+    #member_name{
+        font-size: 20px;
+        margin-bottom: 1px;
+    }
+    .member_faculty {
+        display: flex;
+        flex-direction: column; 
+        align-items: center;
+    }
+    
+    .description-container {
+        display: flex;
+        flex-direction: column; 
+        align-items: center;
+    }
+    
+    #faculty-info {
+        margin-top: 10px;
+        font-weight: 300;
+        font-size: 15px;
+        margin-right: auto;
+        margin-bottom: 5px; 
+        margin-left: 10px;
+    }
+    
+    .description-container img {
+        padding-top: 1px;
+        width: 120px;
+        height: 120px;
+    }
+    
+    #member_contact img {
+        width: 30px;
+        height: 30px;
+        margin-bottom: 10px;
+    }
+    /*contact.html*/
+    #contact_title {
+        text-align: center;
+        font-size: 18px;
+    }
+    #contact_us {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 120px;
+        margin-bottom: 5%;
+        width: 90%;
+        height: auto;
+        margin-left: 5%;
+        border-radius: 20px;
+        flex-direction: column;
+        justify-content: space-between;
+        background: radial-gradient(circle at center, #ffffff, #f4f4f4, #e0e0e0, #ffffff), 
+                    linear-gradient(45deg, #6a85b6, #ff9a9e);
+    }
+    
+    #contact_us_academic{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 90%;
+        margin-bottom: 5px;
+        height: auto;
+        border-radius: 20px;
+        flex-direction: column;
+        justify-content: space-between;
+        background: linear-gradient(45deg, #6a85b6, #ff9a9e);
+    }
+    
+    #contact_academic {
+        margin-top: 20px;
+        margin-bottom:20px;
+        font-size: 15px;
+        width: 90%;
+        height: 160px;
+        border-radius: 20px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background-color: white;
+    }
+    
+    #contact_links {
+        display: flex;
+        justify-content: space-between;
+        width: 95%;
+    }
+    
+    #contact_academic p {
+        text-align: center;
+        font-size: 14px;
+        margin-bottom: 0px;
+    }
+    #contact_links_call,
+    #contact_links_email {
+        padding: 2px;
+        padding-left: 3px;
+        padding-right: 3px;
+        display: flex;
+        align-items: center;
+        border-radius: 5px;
+        transition: transform 0.3s ease;
+        background: linear-gradient(to right, #8B5CF6, #A888F3, #C2B1F0);
+    }
+    
+    #contact_links_email:hover {
+        transform: translateY(10px);
+    }
+    
+    #contact_links_call:hover {
+        transform: translateY(10px);
+    }
+    
+    #contact_links_call img,
+    #contact_links_email img {
+        margin-right: 5px;
+        width: 15px;
+        height: 15px;
+    }
+    footer {
+        font-size: 10px;
+        margin-top: 1px;
+        background-color: #333;
+        color: white;
+        padding: 2px;
+        text-align: center;
+    }
+    footer h2{
+        font-size: 12px;
+    }
+    footer a {
+        color: white;
+        text-decoration: underline;
+        text-align: center;
+        padding: 1px 0;
+        margin-top: auto;
+        transition: transform 0.3s ease;
+    }
+    #footer_links {
+        display: flex;
+        justify-content: center;
+    }
+    
+    #footer_links a {
+        font-size: 10px;
+        text-decoration: none;
+        color: white;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        transition: transform 0.3s ease;
+    }
+    
+    #footer_links a:hover {
+        transform: translateY(10px);
+    }
+    
+    #footer_links a img {
+        width: 25px;
+        height: 25px; 
+        margin-bottom: 2px; 
+        border-radius: 50%;
+        border-color: white;
+    }
+    #footer_links a p{
+        font-size: 10px;
+    }
+
+}
+@media only screen and (min-width: 980px) and (max-width: 1024px){
+/*index.html*/
+#college_sub_title{
+    font-size: 11px;
+}
+#college_logo img {
+    float: left;
+    height: 120px;
+    width: 100px;
+}
+
+#department_logo img {
+    float: right;
+    height: 120px;
+    width: 100px;
+}
+
+#college_sub_title {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#college_sub_title h1, h3 {
+    margin: 0;
+}
+#welcome_scroll {
+    margin-top: 167px;
+    background-color: #e6ebeb;
+}
+.dropdown {
+    display: none;
+}
+#nav_bar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: black; 
+    height: 45px;
+}
+#nav_bar li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 10px 20px; 
+    text-decoration: none;
+    transition: transform 0.3s ease;
+    font-size: 15px;
+}
+#imageslider{
+    margin-top:20px;
+}
+
+/*Events in index.html*/
+.events {
+    margin-left: 5px;
+    margin-right: 5px;
+    margin-bottom: 10px;
+    padding-top: 50px;
+    display: flex;
+    justify-content: space-between;
+}
+.event-column {
+    width: 48%;
+    height: 400px;
+    overflow-y: auto;
+    border: 1px solid #ccc;
+}
+  table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+ th {
+    background-color: black;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    border: 2px solid black;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+}
+
+td {
+    padding: 10px;
+    color: black;
+    padding-bottom: 20px;
+    padding-top: 20px;
+    border: 1px solid black;
+    border-right: 2px solid black;
+    border-left: none;
+}
+
+td.date {
+    background-color: #a60202;
+    color: white;
+    border-right: none;
+    width: 50px;
+    border-left: 2px solid #a60202;
+}
+.event-column {
+    overflow: hidden;
+}
+
+
+#faculty_at_home_page {
+    font-weight: 300;
+    padding-top: 20px;
+    padding-left: 20px;
+    white-space: nowrap;
+    
+}
+
+#faculty_at_home_page h2 {
+    position: relative;
+    display: inline-block;
+    font-size: 25px;
+}
+
+#faculty_at_home_page h2::after {
+    content: "";
+    position: absolute;
+    left: 40px;
+    bottom: -2px;
+    width: 100%;
+    border-bottom: 1px solid black;
+}
+
+#faculty_at_home_page h2::before {
+    content: "";
+    position: absolute;
+    left: 3px;
+    bottom: -4px;
+    width: 50%;
+    border-bottom: 5px solid black;
+}
+
+#faculty_at_home_page_member {
+    text-align: center;
+    display: inline-block;
+    margin-top: 30px;
+    margin-right: 40px; 
+    vertical-align: top; 
+    font-size: 12px;
+}
+
+#faculty_at_home_page_member a.faculty_link {
+    display: block;
+    margin-bottom: 10px; /* Space between the image and the text */
+}
+
+#faculty_at_home_page_member img {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: block;
+    border-radius: 50%;
+    width: 200px;
+    height: 200px;
+    margin-bottom: 10px;
+}
+
+#faculty_at_home_page_member span {
+    display: block;
+}
+    /*about.html*/
+    #imageslider_at_about {
+        margin-top: 180px;
+        margin-bottom: 1px;
+    }
+    
+    #message_from_department {
+        font-size: 14px;
+        padding-left: 5px;
+        width: 98%;
+    }
+    
+    #message {
+        padding-left: 5px;
+    }
+    
+    #msg {
+        font-size: 12px;
+        color: #403e3e;
+    }
+    
+    .accordion {
+        margin-bottom: 4px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+    }
+    .accordion h2{
+        font-size: 13px;
+    }
+    
+    #message_title {
+        font-size: 14px;
+        color: #3a5274;
+        font-weight: bold;
+    }
+    
+    #message img {
+        display: block;
+        margin: 0 auto;
+        margin-top: 2px;
+        width: 120px;
+        height: 120px;
+    }
+    
+
+    .accordion h2 {
+        background-color: #f1f1f1;
+        padding: 5px;
+        margin: 0;
+        cursor: pointer;
+        background: linear-gradient(to right, #74ebd5, #ACB6E5);
+    }
+    
+    .accordion h2:hover {
+        background: linear-gradient(to right, #ACB6E5, #74ebd5);
+    }
+
+    .accordion .content {
+        display: none;
+        padding: 5px;
+    }
+
+    .active {
+        background-color: #ddd;
+    }
+    
+    #course_offered {
+        margin-top: 1px;
+        width: 80%;
+        float: left;
+        margin-left: 5px;
+
+    }
+    
+    #course_offered h2 {
+        color: #3a5274;
+        font-size: 14px;
+    }
+    
+    #course-table {
+        padding-top: 1px;
+        margin-top: 1px;
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 10px;
+    }
+    
+    #course-table th,
+    #course-table td {
+        font-size: 12px;
+        border: 1px solid #ccc;
+        padding: 10px;
+        text-align: left;
+    }
+    
+    #course-table th {
+        background-color: #3a5274;
+        color: white;
+    }
+    
+    #course-table tr:nth-child(even) {
+        background-color: #f2f2f2;
+    }
+    
+    .clearfix::after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+    #nav-bar-in-about table{
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 10px;
+        border: 1px solid #edede8;
+    }
+    #nav-bar-in-about th{
+        font-size: 12px;
+        background-color: #d1d1cd;
+        border: 1px solid #edede8;
+        color: black;
+        text-decoration: underline;
+    }
+    #nav-bar-in-about th:hover:not(.active){
+        background-color: #faa7a7;
+    }
+    #nav-bar-in-about {
+        margin-top: 1px;
+    }
+    #nav-bar-in-about table th.active{
+        background-color: #faa7a7;
+    }
+    #nav-bar-in-about{
+        width: 100%;
+        border-collapse: collapse;
+    }
+    
+    #nav-bar-in-about th {
+        background-color: #3a5274;
+        color: white;
+        padding: 5px;
+        text-align: center;
+        cursor: pointer;
+    }
+    
+    #content {
+        margin-left: 5px;
+        margin-right: 5px;
+        margin-top: 5px;
+        font-weight: 100;
+        font-size: 10px;
+    }
+    .content-section {
+        font-size: 10px;
+        display: none;
+    }
+    
+    .content-section h2 {
+        font-size: 12px;
+        color: #3a5274;
+    }
+    
+    .content-section p {
+        font-size: 10px;
+        color: #403e3e;
+        line-height: 1.6;
+    }
+    /*faculty.html*/
+    #home {
+        font-family: 'Roboto', sans-serif;
+    }
+    
+    #our_team{
+        margin-top: 190px;
+        position: relative;
+        display: inline-block;
+        font-size: 15px;
+        padding-left: 5px;
+    }
+    
+    #our_team::after {
+        content: "";
+        position: absolute;
+        left: 10px;
+        bottom: -2px;
+        width: 100%;
+        border-bottom: 1px solid black;
+        padding-left: 20px;
+    }
+    
+    #our_team::before {
+        content: "";
+        position: absolute;
+        left: 5px;
+        bottom: -3px;
+        width: 50%;
+        border-bottom: 3px solid black;
+    }
+    
+    .faculty_list > p {
+        margin-top: 1px;
+        margin-bottom: 0px;
+        font-size: 13px;
+    }
+    .member_name {
+        font-size: 18px;
+        margin-bottom: 0px;
+    }
+    .image-container img {
+        width: 120px;
+        height: 120px;
+        margin-bottom: 1px;
+    }
+    
+    .team_members {
+        margin-bottom: 5px;
+    }
+    
+    .container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .contact-info a img {
+        width: 20px;
+        height: 20px;
+        margin-bottom: 5px;
+        margin-top: 5px;
+    }
+    
+    
+    .member {
+        font-weight:300;
+        flex: 1;
+        min-height: 250px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 20px;
+        text-align: center;
+        padding: 10px;
+        width: 280px
+    }
+    
+    .member img {
+        width: 150px;
+        height: 150px;
+        margin-bottom: 10px;
+    }
+    
+    .member_name {
+        margin-bottom: 10px;
+    }
+
+    /*facultypage.html*/
+    .name {
+        font-weight: 300;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        margin: 20px;
+        min-width: 25%;
+        max-width: 25%;
+        text-align: center;
+        margin-bottom: auto;
+        font-size: 10px;
+    }
+    .name {
+        flex: 1;
+    }
+    .member_faculty {
+        flex: 0 0 100%;
+        display: flex;
+        align-items:center;
+    }
+    .description-container {
+        flex: 0 0 100%;
+        display: flex;
+        align-items: center;
+    }
+    #faculty-info {
+        font-weight: 300;
+        font-size: 15px;
+        margin-right: 5px;
+        margin-bottom: 200px;
+    }
+    #faculty-info h2{
+        font-size: 15px;
+    }
+    #faculty-info li{
+        font-size: 13px;
+    }
+    #faculty_title {
+        margin-top: 180px;
+        padding-left: 8px;
+        font-size: 15px;
+        font-weight: bold;
+    }
+    #faculty_title {
+        position: relative;
+        display: inline-block;
+        font-size: 20px;
+    }
+    
+    #faculty_title::after {
+        content: "";
+        position: absolute;
+        left: 40px;
+        bottom: -2px;
+        width: 100%;
+        border-bottom: 1px solid black;
+    }
+    
+    #faculty_title::before {
+        content: "";
+        position: absolute;
+        left: 3px;
+        bottom: -4px;
+        width: 50%;
+        border-bottom: 5px solid black;
+    }
+    .description-container img {
+        padding-top: 20px;
+        width: 150px;
+        height: 150px;
+    }
+    #member_contact img {
+    
+        width: 20px;
+        height: 20px;
+        margin-bottom: 15px;
+    }
+    /*contact.html*/
+    #contact_title {
+        text-align: center;
+        font-size: 25px;
+    }
+    #contact_us {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 200px;
+        margin-bottom: 5%;
+        width: 80%;
+        height: auto;
+        margin-left: 10%;
+        border-radius: 20px;
+        flex-direction: column;
+        justify-content: space-between;
+        background: radial-gradient(circle at center, #ffffff, #f4f4f4, #e0e0e0, #ffffff), 
+                    linear-gradient(45deg, #6a85b6, #ff9a9e);
+    }
+    
+    #contact_us_academic{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 5%;
+        margin-bottom: 5%;
+        width: 80%;
+        height: auto;
+        margin-right: 25%;
+        margin-left: 25%;
+        border-radius: 20px;
+        flex-direction: column;
+        justify-content: space-between;
+        background: linear-gradient(45deg, #6a85b6, #ff9a9e);
+    }
+    
+    #contact_academic {
+        width: 90%;
+        height: 200px;
+        border-radius: 20px;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background-color: white;
+    }
+    
+    #contact_links {
+        display: flex;
+        justify-content: space-between;
+        width: 80%;
+        font-size: 12px;
+    }
+    
+    #contact_academic p {
+        text-align: center;
+        font-size: 15px;
+        margin-bottom: 0px;
+    }
+    #contact_links_call,
+    #contact_links_email {
+        padding: 2px;
+        padding-left: 3px;
+        padding-right: 3px;
+        display: flex;
+        align-items: center;
+        border-radius: 10px;
+        transition: transform 0.3s ease;
+        background: linear-gradient(to right, #8B5CF6, #A888F3, #C2B1F0);
+    }
+    
+    #contact_links_email:hover {
+        transform: translateY(10px);
+    }
+    
+    #contact_links_call:hover {
+        transform: translateY(10px);
+    }
+    
+    #contact_links_call img,
+    #contact_links_email img {
+        margin-right: 10px;
+        width: 30px;
+        height: 30px;
+    }
+    footer {
+        font-size: 12px;
+        margin-top: 1px;
+        background-color: #333;
+        color: white;
+        padding: 2px;
+        text-align: center;
+    }
+    footer h2{
+        font-size: 14px;
+    }
+    footer a {
+        color: white;
+        text-decoration: underline;
+        text-align: center;
+        padding: 1px 0;
+        margin-top: auto;
+        transition: transform 0.3s ease;
+    }
+    #footer_links {
+        display: flex;
+        justify-content: center;
+    }
+    
+    #footer_links a {
+        font-size: 10px;
+        text-decoration: none;
+        color: white;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        transition: transform 0.3s ease;
+    }
+    
+    #footer_links a:hover {
+        transform: translateY(10px);
+    }
+    
+    #footer_links a img {
+        width: 25px;
+        height: 25px; 
+        margin-bottom: 2px; 
+        border-radius: 50%;
+        border-color: white;
+    }
+    #footer_links a p{
+        font-size: 12px;
+    }
+}
+@media only screen and (min-width: 1025px) and (max-width: 1399px){
+    /*index.html*/
+    #college_sub_title{
+        font-size: 12px;
+    }
+    #college_logo img {
+        float: left;
+        height: 120px;
+        width: 100px;
+    }
+    
+    #department_logo img {
+        float: right;
+        height: 120px;
+        width: 100px;
+    }
+    
+    #college_sub_title {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    #college_sub_title h1, h3 {
+        margin: 0;
+    }
+    #welcome_scroll {
+        margin-top: 167px;
+        background-color: #e6ebeb;
+    }
+    .dropdown {
+        display: none;
+    }
+    #nav_bar {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: black; 
+        height: 45px;
+    }
+    #nav_bar li a {
+        display: block;
+        color: white;
+        text-align: center;
+        padding: 10px 20px; 
+        text-decoration: none;
+        transition: transform 0.3s ease;
+        font-size: 18px;
+    }
+    #imageslider{
+        margin-top:20px;
+    }
+    
+    /*Events in index.html*/
+    .events {
+        margin-left: 5px;
+        margin-right: 5px;
+        margin-bottom: 10px;
+        padding-top: 50px;
+        display: flex;
+        justify-content: space-between;
+    }
+    .event-column {
+        width: 48%;
+        height: 400px;
+        overflow-y: auto;
+        border: 1px solid #ccc;
+    }
+      table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+    
+     th {
+        background-color: black;
+        color: white;
+        padding: 10px;
+        text-align: center;
+        border: 2px solid black;
+        position: sticky;
+        top: 0;
+        z-index: 1;
+    }
+    
+    td {
+        padding: 10px;
+        color: black;
+        padding-bottom: 20px;
+        padding-top: 20px;
+        border: 1px solid black;
+        border-right: 2px solid black;
+        border-left: none;
+    }
+    
+    td.date {
+        background-color: #a60202;
+        color: white;
+        border-right: none;
+        width: 50px;
+        border-left: 2px solid #a60202;
+    }
+    .event-column {
+        overflow: hidden;
+    }
+    
+    
+    #faculty_at_home_page {
+        font-weight: 300;
+        padding-top: 20px;
+        padding-left: 20px;
+        white-space: nowrap;
+        
+    }
+    
+    #faculty_at_home_page h2 {
+        position: relative;
+        display: inline-block;
+        font-size: 25px;
+    }
+    
+    #faculty_at_home_page h2::after {
+        content: "";
+        position: absolute;
+        left: 40px;
+        bottom: -2px;
+        width: 100%;
+        border-bottom: 1px solid black;
+    }
+    
+    #faculty_at_home_page h2::before {
+        content: "";
+        position: absolute;
+        left: 3px;
+        bottom: -4px;
+        width: 50%;
+        border-bottom: 5px solid black;
+    }
+    
+    #faculty_at_home_page_member {
+        text-align: center;
+        display: inline-block;
+        margin-top: 30px;
+        margin-right: 40px; 
+        vertical-align: top; 
+        font-size: 14px;
+    }
+    
+    #faculty_at_home_page_member a.faculty_link {
+        display: block;
+        margin-bottom: 10px; /* Space between the image and the text */
+    }
+    
+    #faculty_at_home_page_member img {
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        display: block;
+        border-radius: 50%;
+        width: 200px;
+        height: 200px;
+        margin-bottom: 10px;
+    }
+    
+    #faculty_at_home_page_member span {
+        display: block;
+    }
+        /*about.html*/
+        #imageslider_at_about {
+            margin-top: 180px;
+            margin-bottom: 1px;
+        }
+        
+        #message_from_department {
+            font-size: 14px;
+            padding-left: 5px;
+            width: 98%;
+        }
+        
+        #message {
+            padding-left: 5px;
+        }
+        
+        #msg {
+            font-size: 14px;
+            color: #403e3e;
+        }
+        
+        .accordion {
+            margin-bottom: 4px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        .accordion h2{
+            font-size: 15px;
+        }
+        
+        #message_title {
+            font-size: 18px;
+            color: #3a5274;
+            font-weight: bold;
+        }
+        
+        #message img {
+            display: block;
+            margin: 0 auto;
+            margin-top: 2px;
+            width: 200px;
+            height: 200px;
+        }
+        
+    
+        .accordion h2 {
+            background-color: #f1f1f1;
+            padding: 5px;
+            margin: 0;
+            cursor: pointer;
+            background: linear-gradient(to right, #74ebd5, #ACB6E5);
+        }
+        
+        .accordion h2:hover {
+            background: linear-gradient(to right, #ACB6E5, #74ebd5);
+        }
+    
+        .accordion .content {
+            display: none;
+            padding: 5px;
+        }
+    
+        .active {
+            background-color: #ddd;
+        }
+        
+        #course_offered {
+            margin-top: 1px;
+            width: 80%;
+            float: left;
+            margin-left: 5px;
+    
+        }
+        
+        #course_offered h2 {
+            color: #3a5274;
+            font-size: 18px;
+        }
+        
+        #course-table {
+            padding-top: 1px;
+            margin-top: 1px;
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+        
+        #course-table th,
+        #course-table td {
+            font-size: 14px;
+            border: 1px solid #ccc;
+            padding: 10px;
+            text-align: left;
+        }
+        
+        #course-table th {
+            background-color: #3a5274;
+            color: white;
+        }
+        
+        #course-table tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+        
+        .clearfix::after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+        #nav-bar-in-about table{
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+            border: 1px solid #edede8;
+        }
+        #nav-bar-in-about th{
+            font-size: 14px;
+            background-color: #d1d1cd;
+            border: 1px solid #edede8;
+            color: black;
+            text-decoration: underline;
+        }
+        #nav-bar-in-about th:hover:not(.active){
+            background-color: #faa7a7;
+        }
+        #nav-bar-in-about {
+            margin-top: 1px;
+        }
+        #nav-bar-in-about table th.active{
+            background-color: #faa7a7;
+        }
+        #nav-bar-in-about{
+            width: 100%;
+            border-collapse: collapse;
+        }
+        
+        #nav-bar-in-about th {
+            background-color: #3a5274;
+            color: white;
+            padding: 5px;
+            text-align: center;
+            cursor: pointer;
+        }
+        
+        #content {
+            margin-left: 5px;
+            margin-right: 5px;
+            margin-top: 5px;
+            font-weight: 100;
+            font-size: 14px;
+        }
+        .content-section {
+            font-size: 14px;
+            display: none;
+        }
+        
+        .content-section h2 {
+            font-size: 16px;
+            color: #3a5274;
+        }
+        
+        .content-section p {
+            font-size: 10px;
+            color: #403e3e;
+            line-height: 1.6;
+        }
+        /*faculty.html*/
+        #home {
+            font-family: 'Roboto', sans-serif;
+        }
+        
+        #our_team{
+            margin-top: 190px;
+            position: relative;
+            display: inline-block;
+            font-size: 15px;
+            padding-left: 5px;
+        }
+        
+        #our_team::after {
+            content: "";
+            position: absolute;
+            left: 10px;
+            bottom: -2px;
+            width: 100%;
+            border-bottom: 1px solid black;
+            padding-left: 20px;
+        }
+        
+        #our_team::before {
+            content: "";
+            position: absolute;
+            left: 5px;
+            bottom: -3px;
+            width: 50%;
+            border-bottom: 3px solid black;
+        }
+        
+        .faculty_list > p {
+            margin-top: 1px;
+            margin-bottom: 0px;
+            font-size: 13px;
+        }
+        .member_name {
+            font-size: 18px;
+            margin-bottom: 0px;
+        }
+        .image-container img {
+            width: 120px;
+            height: 120px;
+            margin-bottom: 1px;
+        }
+        
+        .team_members {
+            margin-bottom: 5px;
+        }
+        
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .contact-info a img {
+            width: 20px;
+            height: 20px;
+            margin-bottom: 5px;
+            margin-top: 5px;
+        }
+        
+        
+        .member {
+            font-weight:300;
+            flex: 1;
+            min-height: 250px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 20px;
+            text-align: center;
+            padding: 10px;
+            width: 280px
+        }
+        
+        .member img {
+            width: 150px;
+            height: 150px;
+            margin-bottom: 10px;
+        }
+        
+        .member_name {
+            margin-bottom: 10px;
+        }
+    
+        /*facultypage.html*/
+        .name {
+            font-weight: 300;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin: 20px;
+            min-width: 25%;
+            max-width: 25%;
+            text-align: center;
+            margin-bottom: auto;
+            font-size: 10px;
+        }
+        .name {
+            flex: 1;
+        }
+        .member_faculty {
+            flex: 0 0 100%;
+            display: flex;
+            align-items:center;
+        }
+        .description-container {
+            flex: 0 0 100%;
+            display: flex;
+            align-items: center;
+        }
+        #faculty-info {
+            font-weight: 300;
+            font-size: 15px;
+            margin-right: 5px;
+            margin-bottom: 200px;
+        }
+        #faculty-info h2{
+            font-size: 16px;
+        }
+        #faculty-info li{
+            font-size: 14px;
+        }
+        #faculty_title {
+            margin-top: 180px;
+            padding-left: 8px;
+            font-size: 15px;
+            font-weight: bold;
+        }
+        #faculty_title {
+            position: relative;
+            display: inline-block;
+            font-size: 20px;
+        }
+        
+        #faculty_title::after {
+            content: "";
+            position: absolute;
+            left: 40px;
+            bottom: -2px;
+            width: 100%;
+            border-bottom: 1px solid black;
+        }
+        
+        #faculty_title::before {
+            content: "";
+            position: absolute;
+            left: 3px;
+            bottom: -4px;
+            width: 50%;
+            border-bottom: 5px solid black;
+        }
+        .description-container img {
+            padding-top: 20px;
+            width: 150px;
+            height: 150px;
+        }
+        #member_contact img {
+        
+            width: 20px;
+            height: 20px;
+            margin-bottom: 15px;
+        }
+        /*contact.html*/
+        #contact_title {
+            text-align: center;
+            font-size: 25px;
+        }
+        #contact_us {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 200px;
+            margin-bottom: 5%;
+            width: 80%;
+            height: auto;
+            margin-left: 10%;
+            border-radius: 20px;
+            flex-direction: column;
+            justify-content: space-between;
+            background: radial-gradient(circle at center, #ffffff, #f4f4f4, #e0e0e0, #ffffff), 
+                        linear-gradient(45deg, #6a85b6, #ff9a9e);
+        }
+        
+        #contact_us_academic{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 5%;
+            margin-bottom: 5%;
+            width: 80%;
+            height: auto;
+            margin-right: 25%;
+            margin-left: 25%;
+            border-radius: 20px;
+            flex-direction: column;
+            justify-content: space-between;
+            background: linear-gradient(45deg, #6a85b6, #ff9a9e);
+        }
+        
+        #contact_academic {
+            width: 90%;
+            height: 200px;
+            border-radius: 20px;
+            margin-top: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background-color: white;
+        }
+        
+        #contact_links {
+            display: flex;
+            justify-content: space-between;
+            width: 80%;
+            font-size: 12px;
+        }
+        
+        #contact_academic p {
+            text-align: center;
+            font-size: 15px;
+            margin-bottom: 0px;
+        }
+        #contact_links_call,
+        #contact_links_email {
+            padding: 2px;
+            padding-left: 3px;
+            padding-right: 3px;
+            display: flex;
+            align-items: center;
+            border-radius: 10px;
+            transition: transform 0.3s ease;
+            background: linear-gradient(to right, #8B5CF6, #A888F3, #C2B1F0);
+        }
+        
+        #contact_links_email:hover {
+            transform: translateY(10px);
+        }
+        
+        #contact_links_call:hover {
+            transform: translateY(10px);
+        }
+        
+        #contact_links_call img,
+        #contact_links_email img {
+            margin-right: 10px;
+            width: 30px;
+            height: 30px;
+        }
+        footer {
+            font-size: 14px;
+            margin-top: 1px;
+            background-color: #333;
+            color: white;
+            padding: 2px;
+            text-align: center;
+        }
+        footer h2{
+            font-size: 16px;
+        }
+        footer a {
+            color: white;
+            text-decoration: underline;
+            text-align: center;
+            padding: 1px 0;
+            margin-top: auto;
+            transition: transform 0.3s ease;
+        }
+        #footer_links {
+            display: flex;
+            justify-content: center;
+        }
+        
+        #footer_links a {
+            font-size: 14px;
+            text-decoration: none;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            transition: transform 0.3s ease;
+        }
+        
+        #footer_links a:hover {
+            transform: translateY(10px);
+        }
+        
+        #footer_links a img {
+            width: 30px;
+            height: 30px; 
+            margin-bottom: 2px; 
+            border-radius: 50%;
+            border-color: white;
+        }
+        #footer_links a p{
+            font-size: 14px;
+        }
+    }
