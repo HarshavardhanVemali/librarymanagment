@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 
 from pathlib import Path
 import os
+import parse
 import dj_database_url
 from django.core.wsgi import get_wsgi_application
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -76,22 +77,24 @@ TEMPLATES = [
 ]
 WSGI_APPLICATION = 'myproject.wsgi.application'
 
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'myproject.settings')
-
-application = get_wsgi_application()
-
-WSGI_APPLICATION = 'myproject.wsgi.application'
-
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',  # Ensure this is correctly set
-        'NAME': 'librarymanagment_leju',
-        'USER': 'librarymanagment_leju_user',
-        'PASSWORD': 'your_password',  # Replace with your actual password
-        'HOST': 'dpg-cp4smb8cmk4c73eokrs0-a.oregon-postgres.render.com',
-        'PORT': '5432',
+        'ENGINE': 'django.db.backends.postgresql', 
+        'NAME': 'librarymanagment',  # Replace with your database name
+        'USER': 'librarymanagment_leju_user',       # Replace with your database user
+        'PASSWORD': 'postgres://librarymanagment_leju_user:PRuJyXAaxg8zKcZ8QRHGXUnffHBKWrFg@dpg-cp4smb8cmk4c73eokrs0-a.oregon-postgres.render.com/librarymanagment_leju',  # Replace with your database password
+        'HOST': 'dpg-cp4smb8cmk4c73eokrs0-a',       # Replace with your database host (e.g., 'localhost' or your Render connection details)
+        'PORT': '5432',                # Usually 5432 for PostgreSQL
     }
 }
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
+    }
+}
+DATABASES["default"]=dj_database_url.parse("postgres://librarymanagment_leju_user:PRuJyXAaxg8zKcZ8QRHGXUnffHBKWrFg@dpg-cp4smb8cmk4c73eokrs0-a.oregon-postgres.render.com/librarymanagment_leju")
+
 # Password validation
 # https://docs.djangoproject.com/en/5.0/ref/settings/#auth-password-validators
 
