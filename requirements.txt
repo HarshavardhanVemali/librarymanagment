@@ -9,7 +9,7 @@ colorama==0.4.3
 Django==5.0.4
 django-allauth==0.62.1
 idna==3.7
-jmespath==1.0.1r
+jmespath==1.0.1
 pathspec==0.10.1
 pillow==10.3.0
 python-dateutil==2.9.0.post0
