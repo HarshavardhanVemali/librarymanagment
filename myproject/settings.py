@@ -84,10 +84,10 @@ WSGI_APPLICATION = 'myproject.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
+        'ENGINE': 'django.db.backends.postgresql',  # Ensure this is correctly set
         'NAME': 'librarymanagment_leju',
         'USER': 'librarymanagment_leju_user',
-        'PASSWORD': 'PRuJyXAaxg8zKcZ8QRHGXUnffHBKWrFg',
+        'PASSWORD': 'your_password',  # Replace with your actual password
         'HOST': 'dpg-cp4smb8cmk4c73eokrs0-a.oregon-postgres.render.com',
         'PORT': '5432',
     }
