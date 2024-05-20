@@ -887,6 +887,9 @@ footer a {
 }
 .library-container{
     margin-top: 200px;
+    margin-bottom: 20px;
+    margin-left: 10px;
+    margin-right: 20px;
 }
 
 /*for small and medium mobiles*/
