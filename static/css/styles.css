@@ -2268,6 +2268,7 @@ footer a {
     /*regulation.html*/
     #regulation{
         margin-top: 60px;
+        margin-bottom: auto;
     }
     #regulation > h2{
         margin-left: 5px;
